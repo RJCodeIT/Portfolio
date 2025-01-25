@@ -1,58 +1,137 @@
+'use client';
+
 import React from 'react';
 import HowWeWorkCard from "../components/ui/HowWeWorkCard";
+import { motion } from 'framer-motion';
 
 export default function HowWeWorkContainer() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+        duration: 1.2
+      }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        delay: 0.2,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const ctaVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.2,
+        delay: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="w-full py-12 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4 animate-slideDown">
+      <motion.div 
+        className="container mx-auto px-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4"
+          variants={titleVariants}
+        >
           A transparent process
-        </h2>
-        <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto animate-fadeIn">
+        </motion.h2>
+        <motion.p 
+          className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto"
+          variants={subtitleVariants}
+        >
           Step by step, we&apos;ll turn your vision into reality
-        </p>
+        </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="animate-cardSlideUp" style={{ animationDelay: '0ms' }}>
+          <motion.div variants={cardVariants} custom={0}>
             <HowWeWorkCard
               stepNumber={1}
               icon="💬"
               title="Consultations"
               content="We start with a conversation to understand your needs, business goals, and expectations. Together, we define the project vision and scope."
             />
-          </div>
-          <div className="animate-cardSlideUp" style={{ animationDelay: '150ms' }}>
+          </motion.div>
+          <motion.div variants={cardVariants} custom={1}>
             <HowWeWorkCard
               stepNumber={2}
               icon="🛠️"
               title="Solution Proposal"
               content="We create a tailored solution that best fits your requirements. We present a detailed action plan, estimated timeline, and project cost."
             />
-          </div>
-          <div className="animate-cardSlideUp" style={{ animationDelay: '300ms' }}>
+          </motion.div>
+          <motion.div variants={cardVariants} custom={2}>
             <HowWeWorkCard
               stepNumber={3}
               icon="💻"
               title="Project Implementation"
               content="Once approved, we begin the implementation process. We use proven technologies and adhere to the highest coding standards. You'll be regularly updated on the progress."
             />
-          </div>
-          <div className="animate-cardSlideUp" style={{ animationDelay: '450ms' }}>
+          </motion.div>
+          <motion.div variants={cardVariants} custom={3}>
             <HowWeWorkCard
               stepNumber={4}
               icon="✅"
               title="Testing and Deployment"
               content="Before the final release, the project undergoes rigorous testing to ensure everything works flawlessly. We also assist you with deployment and product launch."
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="text-center mt-12 animate-fadeInUp" style={{ animationDelay: '600ms' }}>
+        <motion.div 
+          className="text-center mt-12"
+          variants={ctaVariants}
+        >
           <p className="text-2xl text-gray-800 font-semibold mb-6">
             Ready to get started? Contact us and see how we can help you!
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
