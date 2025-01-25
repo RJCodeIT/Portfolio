@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface InputProps {
   label: string;
@@ -10,6 +11,7 @@ interface InputProps {
   required?: boolean;
   value?: string;
   name?: string;
+  className?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
@@ -20,6 +22,7 @@ export default function Input({
   required = false,
   value,
   name,
+  className,
   onChange,
 }: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
@@ -62,14 +65,15 @@ export default function Input({
           transition={{ duration: 0.2 }}
         />
         <InputComponent
-          className={`
-            w-full px-4 py-2 bg-white border border-gray-300 rounded-md
-            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-            relative z-10
-            ${isTextArea ? 'min-h-[120px] resize-none' : 'h-10'}
-            transition-all duration-200
-            ${isFocused ? 'border-blue-500 shadow-lg shadow-blue-500/20' : ''}
-          `}
+          className={cn(
+            "w-full px-4 py-2 bg-white border border-gray-300 rounded-md",
+            "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+            "relative z-10",
+            isTextArea ? 'min-h-[120px] resize-none' : 'h-10',
+            "transition-all duration-200",
+            isFocused ? 'border-blue-500 shadow-lg shadow-blue-500/20' : '',
+            className
+          )}
           placeholder={placeholder}
           type={!isTextArea ? type : undefined}
           required={required}

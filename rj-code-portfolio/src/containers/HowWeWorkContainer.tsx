@@ -2,6 +2,7 @@
 
 import React from 'react';
 import HowWeWorkCard from "../components/ui/HowWeWorkCard";
+import Button from "../components/ui/Button";
 import { motion } from 'framer-motion';
 
 export default function HowWeWorkContainer() {
@@ -124,12 +125,17 @@ export default function HowWeWorkContainer() {
         </div>
 
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-16"
           variants={ctaVariants}
         >
-          <p className="text-2xl text-gray-800 font-semibold mb-6">
-            Ready to get started? Contact us and see how we can help you!
-          </p>
+          <h3 className="text-2xl font-semibold mb-6">Ready to get started? Contact us and see how we can help you!</h3>
+          <Button 
+            variant="primary" 
+            size="lg"
+            onClick={() => window.location.href = '#contact'}
+          >
+            Contact Us
+          </Button>
         </motion.div>
       </motion.div>
     </section>

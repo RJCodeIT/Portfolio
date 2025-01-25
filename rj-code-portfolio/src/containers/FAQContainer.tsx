@@ -1,6 +1,7 @@
 'use client';
 
 import FAQCard from '../components/ui/FAQCard';
+import Button from '../components/ui/Button';
 import { motion } from 'framer-motion';
 
 export default function FAQContainer() {
@@ -101,15 +102,16 @@ export default function FAQContainer() {
           className="text-center mt-16"
           variants={itemVariants}
         >
-          <p className="text-xl font-medium text-gray-700 mb-6">
-            Didn&apos;t find the answer to your question?
-          </p>
-          <motion.p 
-            className="text-gray-600"
-            variants={itemVariants}
-          >
+          <p className="text-xl text-gray-600 mb-6">
             Contact us directly and we&apos;ll be happy to help you with any additional questions.
-          </motion.p>
+          </p>
+          <Button 
+            variant="primary" 
+            size="lg"
+            onClick={() => window.location.href = '#contact'}
+          >
+            Get in Touch
+          </Button>
         </motion.div>
       </motion.div>
     </section>

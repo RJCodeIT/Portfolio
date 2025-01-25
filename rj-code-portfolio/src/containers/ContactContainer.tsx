@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Input from '../components/ui/Input';
+import Button from '../components/ui/Button';
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -80,44 +81,57 @@ export default function ContactContainer() {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
             variants={itemVariants}
           >
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 gap-6">
-                <motion.div variants={itemVariants}>
-                  <Input
-                    label="Full Name"
-                    placeholder="Enter your full name"
-                    required
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    name="fullName"
-                  />
-                </motion.div>
-                
-                <motion.div variants={itemVariants}>
-                  <Input
-                    label="Email Address"
-                    placeholder="Enter your email address"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    name="email"
-                  />
-                </motion.div>
-                
-                <motion.div variants={itemVariants}>
-                  <Input
-                    label="Message"
-                    placeholder="Write your message here"
-                    type="textarea"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    name="message"
-                  />
-                </motion.div>
+            <form>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 gap-6">
+                  <motion.div variants={itemVariants}>
+                    <Input
+                      label="Full Name"
+                      placeholder="Enter your full name"
+                      required
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      name="fullName"
+                    />
+                  </motion.div>
+                  
+                  <motion.div variants={itemVariants}>
+                    <Input
+                      label="Email Address"
+                      placeholder="Enter your email address"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      name="email"
+                    />
+                  </motion.div>
+                  
+                  <motion.div variants={itemVariants}>
+                    <Input
+                      label="Message"
+                      placeholder="Write your message here"
+                      type="textarea"
+                      required
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      name="message"
+                      className="w-full h-32 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/80"
+                    />
+                  </motion.div>
+                </div>
               </div>
-            </div>
+              <motion.div variants={itemVariants}>
+                <Button 
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  className="w-full mt-4"
+                >
+                  Send Message
+                </Button>
+              </motion.div>
+            </form>
           </motion.div>
 
           {/* Contact Details */}
