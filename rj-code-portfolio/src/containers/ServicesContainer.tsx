@@ -1,5 +1,9 @@
-export default function ServicesContainer() {
+const ServicesContainer = () => {
   return (
-    <div>Oferta i korzyści</div>
-  )
-}
+    <section id="services" className="min-h-screen">
+      <h1>ServicesContainer</h1>
+    </section>
+  );
+};
+
+export default ServicesContainer;

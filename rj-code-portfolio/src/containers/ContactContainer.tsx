@@ -57,7 +57,7 @@ export default function ContactContainer() {
   };
 
   return (
-    <section className="w-full py-24 bg-gradient-to-b from-transparent to-gray-50/50">
+    <section id="contact" className="w-full py-24 bg-gradient-to-b from-transparent to-gray-50/50">
       <motion.div 
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}

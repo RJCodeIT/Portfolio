@@ -29,7 +29,7 @@ export default function FAQContainer() {
   };
 
   return (
-    <section className="w-full py-24 bg-gradient-to-b from-transparent to-gray-50/50">
+    <section id="faq" className="w-full py-24 bg-gradient-to-b from-transparent to-gray-50/50">
       <motion.div 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}

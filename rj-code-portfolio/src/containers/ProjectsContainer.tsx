@@ -1,5 +1,9 @@
-export default function ProjectsContainer() {
+const ProjectsContainer = () => {
   return (
-    <div>Nasze projekty</div>
-  )
-}
+    <section id="projects" className="min-h-screen">
+      <h1>ProjectsContainer</h1>
+    </section>
+  );
+};
+
+export default ProjectsContainer;
