@@ -120,7 +120,7 @@ const Navbar = () => {
     { href: "#about", text: "About" },
     { href: "#projects", text: "Projects" },
     { href: "#services", text: "Services" },
-    { href: "#testimonials", text: "Testimonials" },
+    { href: "#reviews", text: "Reviews" },
     { href: "#howWeWork", text: "How we work" },
     { href: "#contact", text: "Contact" },
     { href: "#faq", text: "FAQ" }

@@ -2,7 +2,7 @@ import HeroContainer from "@/containers/HeroContainer";
 import AboutContainer from "@/containers/AboutContainer";
 import ProjectsContainer from "@/containers/ProjectsContainer";
 import ServicesContainer from "@/containers/ServicesContainer";
-import TestimonialsContainer from "@/containers/TestimonialsContainer";
+import ReviewsContainer from "@/containers/ReviewsContainer";
 import HowWeWorkContainer from "@/containers/HowWeWorkContainer";
 import ContactContainer from "@/containers/ContactContainer";
 import FAQContainer from "@/containers/FAQContainer";
@@ -14,7 +14,7 @@ export default function Home() {
       <AboutContainer />
       <ProjectsContainer />
       <ServicesContainer />
-      <TestimonialsContainer />
+      <ReviewsContainer />
       <HowWeWorkContainer /> 
       <ContactContainer />
       <FAQContainer />
