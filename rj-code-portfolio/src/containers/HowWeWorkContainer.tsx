@@ -68,7 +68,7 @@ export default function HowWeWorkContainer() {
   };
 
   return (
-    <section id="howWeWork" className="w-full py-12 bg-gray-50 overflow-hidden">
+    <section id="howWeWork" className="w-full py-12 overflow-hidden">
       <motion.div 
         className="container mx-auto px-6"
         variants={containerVariants}

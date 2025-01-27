@@ -9,7 +9,7 @@ interface ReviewCardProps extends Review {
 export default function ReviewCard({ name, role, content, rating, index }: ReviewCardProps) {
   return (
     <motion.div 
-      className="flex flex-col items-start p-6 bg-[#252525] rounded-xl shadow-xl w-full min-h-[200px] backdrop-blur-sm relative overflow-hidden"
+      className="flex flex-col items-start p-6 bg-black/20 backdrop-blur-sm rounded-xl w-full min-h-[200px] relative overflow-hidden"
       whileHover={{ 
         scale: 1.05,
         boxShadow: "0 25px 35px -5px rgba(0, 0, 0, 0.3), 0 15px 15px -5px rgba(0, 0, 0, 0.2)"

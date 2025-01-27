@@ -76,7 +76,7 @@ export default function ReviewsContainer() {
   return (
     <section 
       id="reviews" 
-      className="relative h-screen bg-[#1c1c1c] overflow-hidden"
+      className="relative h-screen overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -107,7 +107,6 @@ export default function ReviewsContainer() {
             const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
             const angle = Math.atan2(distanceY, distanceX);
             
-            // Calculate entry animation delay based on grid position
             const entryDelay = (index % 4 * 0.1) + (Math.floor(index / 4) * 0.1);
             
             const baseRepulsion = 180;

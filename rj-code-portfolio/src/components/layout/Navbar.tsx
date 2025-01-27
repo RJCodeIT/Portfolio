@@ -27,10 +27,11 @@ const linkVariants = {
     }
   }),
   hover: { 
-    scale: 1.1,
+    scale: 1.05,
+    y: -2,
     transition: {
-      duration: 0.2,
-      ease: "easeInOut"
+      duration: 0.3,
+      ease: "easeOut"
     }
   }
 };
@@ -135,10 +136,10 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="mx-4 my-2 px-6 py-3 flex bg-[#0D0D0D]/95 backdrop-blur-sm rounded-full"
+            className="mx-4 my-4 px-8 py-4 flex bg-black/20 backdrop-blur-md rounded-full border border-white/5 shadow-lg"
           >
             <motion.div 
-              className="flex gap-6"
+              className="flex gap-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -153,9 +154,16 @@ const Navbar = () => {
                   initial="initial"
                   animate="animate"
                   whileHover="hover"
-                  className={`text-white hover:text-blue-500 transition-colors cursor-pointer ${
-                    activeSection === link.href.replace('#', '') ? 'text-blue-500' : ''
-                  }`}
+                  className={`relative text-sm font-medium tracking-wide transition-colors duration-300
+                    ${activeSection === link.href.replace('#', '') 
+                      ? 'text-white' 
+                      : 'text-gray-400 hover:text-white'
+                    }
+                    ${activeSection === link.href.replace('#', '') 
+                      ? 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-100 after:transition-transform after:duration-300' 
+                      : 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100'
+                    }
+                  `}
                 >
                   {link.text}
                 </motion.a>

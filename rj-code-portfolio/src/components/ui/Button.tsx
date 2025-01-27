@@ -22,19 +22,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   disabled,
   ...props
 }, ref) => {
-  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border-2'
+  const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none backdrop-blur-sm'
   
   const variants = {
-    primary: 'bg-primary text-gray-900 hover:bg-primary/90 focus:ring-primary/50 border-gray-800/20',
-    secondary: 'bg-secondary text-gray-900 hover:bg-secondary/90 focus:ring-secondary/50 border-gray-800/20',
-    outline: 'border-2 border-gray-800 text-gray-900 hover:bg-primary hover:text-gray-900 focus:ring-primary/50',
-    ghost: 'hover:bg-gray-100 text-gray-900 border-transparent focus:ring-gray-500/50'
+    primary: 'bg-gradient-to-r from-primary to-secondary text-white hover:brightness-110 focus:ring-primary/50 border border-white/10',
+    secondary: 'bg-white/5 text-white hover:bg-white/10 focus:ring-white/50 border border-white/10',
+    outline: 'border border-white/20 text-white hover:bg-white/5 focus:ring-white/50',
+    ghost: 'hover:bg-white/5 text-white border-transparent focus:ring-white/50'
   }
 
   const sizes = {
-    sm: 'h-8 px-3 text-sm',
-    md: 'h-10 px-4 text-base',
-    lg: 'h-12 px-6 text-lg'
+    sm: 'h-9 px-4 text-sm',
+    md: 'h-11 px-6 text-base',
+    lg: 'h-14 px-8 text-lg'
   }
 
   return (
@@ -44,40 +44,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
         baseStyles,
         variants[variant],
         sizes[size],
-        'transform transition-transform duration-200',
+        'transform transition-all duration-300 hover:-translate-y-0.5',
         className
       )}
       disabled={disabled || isLoading}
       {...props}
     >
-      <div className={cn(
-        "flex items-center gap-2",
-        "hover:scale-[1.02] active:scale-[0.98] transition-transform",
-      )}>
-        {isLoading && (
-          <svg 
-            className="animate-spin -ml-1 mr-2 h-4 w-4" 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24"
-          >
-            <circle 
-              className="opacity-25" 
-              cx="12" 
-              cy="12" 
-              r="10" 
-              stroke="currentColor" 
-              strokeWidth="4"
-            />
-            <path 
-              className="opacity-75" 
-              fill="currentColor" 
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            />
-          </svg>
-        )}
-        {children}
-      </div>
+      {isLoading ? (
+        <div className="flex items-center space-x-2">
+          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          <span>Loading...</span>
+        </div>
+      ) : children}
     </button>
   )
 })
