@@ -68,28 +68,28 @@ export default function HowWeWorkContainer() {
   };
 
   return (
-    <section id="howWeWork" className="w-full py-12 overflow-hidden">
+    <section id="howWeWork" className="w-full py-24 overflow-hidden">
       <motion.div 
-        className="container mx-auto px-6"
+        className="container mx-auto px-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4"
+          className="text-5xl md:text-6xl font-bold text-center text-white mb-6"
           variants={titleVariants}
         >
           A transparent process
         </motion.h2>
         <motion.p 
-          className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto"
+          className="text-xl text-white/80 text-center mb-20 max-w-3xl mx-auto"
           variants={subtitleVariants}
         >
           Step by step, we&apos;ll turn your vision into reality
         </motion.p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           <motion.div variants={cardVariants} custom={0}>
             <HowWeWorkCard
               stepNumber={1}
@@ -128,7 +128,7 @@ export default function HowWeWorkContainer() {
           className="text-center mt-16"
           variants={ctaVariants}
         >
-          <h3 className="text-2xl font-semibold mb-6">Ready to get started? Contact us and see how we can help you!</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6">Ready to get started? Contact us and see how we can help you!</h3>
           <Button 
             variant="primary" 
             size="lg"

@@ -57,7 +57,7 @@ export default function ContactContainer() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-gradient-to-b from-transparent to-gray-50/50">
+    <section id="contact" className="w-full py-32 relative">
       <motion.div 
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
@@ -66,11 +66,11 @@ export default function ContactContainer() {
         viewport={{ once: true, margin: "-100px" }}
       >
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-20"
           variants={itemVariants}
         >
-          <h2 className="text-4xl font-bold mb-4">Get in Touch with Us!</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <h2 className="text-4xl font-bold mb-6 text-gray-100">Get in Touch with Us!</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Have a question or an idea? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ export default function ContactContainer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Contact Form */}
           <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="backdrop-blur-lg bg-white/10 rounded-2xl shadow-2xl p-8 hover:shadow-3xl transition-all duration-300 border border-white/20"
             variants={itemVariants}
           >
             <form>
@@ -126,7 +126,7 @@ export default function ContactContainer() {
                   type="submit"
                   variant="primary"
                   size="lg"
-                  className="w-full mt-4"
+                  className="w-full mt-8"
                 >
                   Send Message
                 </Button>
@@ -139,98 +139,98 @@ export default function ContactContainer() {
             className="lg:pl-8"
             variants={itemVariants}
           >
-            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div className="backdrop-blur-lg bg-white/10 rounded-2xl shadow-2xl p-8 hover:shadow-3xl transition-all duration-300 border border-white/20">
               <motion.h3 
-                className="text-2xl font-semibold mb-6"
+                className="text-2xl font-semibold mb-8 text-gray-100"
                 variants={itemVariants}
               >
                 Contact Information
               </motion.h3>
               
-              <div className="space-y-8">
-                <div className="space-y-6">
+              <div className="space-y-10">
+                <div className="space-y-8">
                   <motion.div 
-                    className="flex items-center space-x-4 group"
+                    className="flex items-center space-x-6 group"
                     variants={contactItemVariants}
                     whileHover={{ x: 8 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-200">
+                    <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                       <motion.div
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <FaEnvelope className="text-xl text-blue-600" />
+                        <FaEnvelope className="text-2xl text-white/80" />
                       </motion.div>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">Email us at</p>
-                      <a href="mailto:hello@rjcodeit.com" className="text-blue-600 hover:underline">hello@rjcodeit.com</a>
+                      <p className="text-sm text-gray-400 mb-1">Email us at</p>
+                      <a href="mailto:hello@rjcodeit.com" className="text-gray-200 hover:text-blue-400 transition-colors duration-200 text-lg">hello@rjcodeit.com</a>
                     </div>
                   </motion.div>
                   
                   <motion.div 
-                    className="flex items-center space-x-4 group"
+                    className="flex items-center space-x-6 group"
                     variants={contactItemVariants}
                     whileHover={{ x: 8 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-200">
+                    <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                       <motion.div
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <FaPhone className="text-xl text-blue-600" />
+                        <FaPhone className="text-2xl text-white/80" />
                       </motion.div>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">Call us at</p>
-                      <p className="font-medium">+48 123 456 789</p>
+                      <p className="text-sm text-gray-400 mb-1">Call us at</p>
+                      <p className="font-medium text-lg text-gray-200">+48 123 456 789</p>
                     </div>
                   </motion.div>
                   
                   <motion.div 
-                    className="flex items-center space-x-4 group"
+                    className="flex items-center space-x-6 group"
                     variants={contactItemVariants}
                     whileHover={{ x: 8 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-200">
+                    <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                       <motion.div
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <FaLinkedin className="text-xl text-blue-600" />
+                        <FaLinkedin className="text-2xl text-white/80" />
                       </motion.div>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">Connect with us</p>
-                      <a href="#" className="hover:underline font-medium">LinkedIn Profile</a>
+                      <p className="text-sm text-gray-400 mb-1">Connect with us</p>
+                      <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200 text-lg">LinkedIn Profile</a>
                     </div>
                   </motion.div>
                   
                   <motion.div 
-                    className="flex items-center space-x-4 group"
+                    className="flex items-center space-x-6 group"
                     variants={contactItemVariants}
                     whileHover={{ x: 8 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-200">
+                    <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                       <motion.div
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <FaGithub className="text-xl text-blue-600" />
+                        <FaGithub className="text-2xl text-white/80" />
                       </motion.div>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">Check our work</p>
-                      <a href="#" className="hover:underline font-medium">GitHub Projects</a>
+                      <p className="text-sm text-gray-400 mb-1">Check our work</p>
+                      <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200 text-lg">GitHub Projects</a>
                     </div>
                   </motion.div>
                 </div>
 
                 <motion.div 
-                  className="pt-6 border-t border-gray-100"
+                  className="pt-8 border-t border-white/10"
                   variants={itemVariants}
                 >
-                  <p className="text-gray-600">
+                  <p className="text-gray-400">
                     Have a question or an idea? Reach out via the form or contact details above, and we&apos;ll get back to you soon!
                   </p>
                 </motion.div>

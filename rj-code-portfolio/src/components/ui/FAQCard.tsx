@@ -18,15 +18,15 @@ export default function FAQCard({
 
   return (
     <div 
-      className={`w-full border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 
-      ${isOpen ? 'bg-gray-50' : 'bg-white'}`}
+      className={`w-full backdrop-blur-md border border-white/10 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 
+      ${isOpen ? 'bg-white/10' : 'bg-white/5'}`}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 text-left flex justify-between items-center gap-4 group"
+        className="w-full p-8 text-left flex justify-between items-center gap-8 group"
       >
         <motion.h3 
-          className="text-lg font-semibold text-gray-900 group-hover:translate-x-1 transition-transform duration-300"
+          className="text-lg font-semibold text-white group-hover:translate-x-1 transition-transform duration-300"
         >
           {question}
         </motion.h3>
@@ -37,7 +37,7 @@ export default function FAQCard({
             stiffness: 300,
             damping: 20
           }}
-          className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-700 transition-colors duration-300"
+          className="w-6 h-6 text-white/70 flex-shrink-0 group-hover:text-white transition-colors duration-300"
         >
           <svg
             viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ export default function FAQCard({
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <p
-                className={`px-6 pb-6 text-gray-600 leading-relaxed ${
+                className={`px-8 pb-8 text-white/80 leading-relaxed ${
                   preserveWhitespace ? "whitespace-pre-line" : ""
                 }`}
               >
@@ -88,7 +88,7 @@ export default function FAQCard({
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute left-6 right-6 top-0 h-px bg-gray-200"
+              className="absolute left-8 right-8 top-0 h-px bg-white/10"
             />
           </motion.div>
         )}
