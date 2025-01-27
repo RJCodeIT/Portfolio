@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url('/backgrounds/rainingStreaksBackground.svg');
+  background-image: url('/backgrounds/rainingStreaks.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
