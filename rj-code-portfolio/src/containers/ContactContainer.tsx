@@ -116,7 +116,6 @@ export default function ContactContainer() {
                       value={formData.message}
                       onChange={handleInputChange}
                       name="message"
-                      className="w-full h-32 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/80"
                     />
                   </motion.div>
                 </div>
