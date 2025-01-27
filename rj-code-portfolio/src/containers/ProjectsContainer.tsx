@@ -1,6 +1,5 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
 import { projects } from "../const/projects";
 import { PinContainer } from "../components/ui/Pin";
@@ -31,7 +30,7 @@ export default function ProjectsContainer() {
             >
               <div className="relative flex items-center justify-center w-full overflow-hidden h-[25vh] lg:h-[35vh] mb-10">
                 <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl flex items-center justify-center"
                   style={{ backgroundColor: "#13162D" }}
                 >
                   <Image 
@@ -71,27 +70,35 @@ export default function ProjectsContainer() {
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
+                        zIndex: item.iconLists.length - index,
+                        marginLeft: index > 0 ? '-12px' : '0',
                       }}
                     >
-                      <Image 
-                        src={icon} 
-                        alt={`technology-${index}`}
-                        width={24}
-                        height={24}
-                        className="p-2"
-                      />
+                      <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center aspect-square">
+                        <Image 
+                          src={icon} 
+                          alt={`technology-${index}`}
+                          width={35}
+                          height={35}
+                          className="p-1"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <Image
+                    src="/LocationArrow.svg"
+                    alt="arrow"
+                    width={24}
+                    height={24}
+                    className="ml-2"
+                  />
                 </div>
               </div>
             </PinContainer>
