@@ -1,6 +1,6 @@
 export const services = [
   {
-    icon: "FaReact", // Przechowujemy nazwę komponentu jako string
+    icon: "/reactBlack.svg",
     title: "Web Applications",
     description:
       "We build modern web applications tailored to your business needs.",
@@ -11,7 +11,7 @@ export const services = [
     ],
   },
   {
-    icon: "FaCode",
+    icon: "/code.svg",
     title: "Websites",
     description:
       "Custom websites designed to represent your brand and engage your audience.",
@@ -22,7 +22,7 @@ export const services = [
     ],
   },
   {
-    icon: "FaMobile",
+    icon: "/mobile.svg",
     title: "Progressive Web Apps",
     description:
       "Fast, reliable, and engaging PWAs to bridge the gap between web and mobile.",
@@ -33,7 +33,7 @@ export const services = [
     ],
   },
   {
-    icon: "FaPlug",
+    icon: "/plug.svg",
     title: "API Integrations",
     description:
       "Connect your systems seamlessly with powerful API integrations.",
