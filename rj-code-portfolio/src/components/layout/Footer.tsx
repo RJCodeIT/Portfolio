@@ -79,7 +79,7 @@ export default function Footer() {
                     className="brightness-0 invert"
                   />
                 </div>
-                contact@rjcodeit.com
+                rjcodeit@gmail.com
               </a>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function Footer() {
             </div>
             <div className="flex space-x-8">
               {[
-                { icon: githubIcon, href: "https://github.com" },
+                { icon: githubIcon, href: "https://github.com/RJCodeIT" },
                 { icon: linkedinIcon, href: "https://linkedin.com" },
                 { icon: instagramIcon, href: "https://instagram.com" },
               ].map((social, index) => (

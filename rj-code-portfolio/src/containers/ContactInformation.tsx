@@ -39,13 +39,13 @@ export default function ContactInformation() {
             {
               icon: envelopeIcon,
               label: "Email us at",
-              value: "hello@rjcodeit.com",
-              link: "mailto:hello@rjcodeit.com",
+              value: "rjcodeit@gmail.com",
+              link: "mailto:rjcodeit@gmail.com",
             },
             {
               icon: phoneIcon,
               label: "Call us at",
-              value: "+48 123 456 789",
+              value: "+48 698 952 035 or +48 664 082 178",
               link: "",
             },
             {
@@ -58,7 +58,7 @@ export default function ContactInformation() {
               icon: githubIcon,
               label: "Check our work",
               value: "GitHub Projects",
-              link: "#",
+              link: "https://github.com/RJCodeIT",
             },
           ].map((item, index) => (
             <motion.div
