@@ -5,6 +5,7 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import confetti, { Options } from 'canvas-confetti';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,60 @@ export default function ContactForm() {
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const successAnimation = {
+    scale: [1, 1.2, 1],
+    rotate: [0, 10, -10, 0],
+    transition: { duration: 0.6 }
+  };
+
+  const errorAnimation = {
+    x: [0, -10, 10, -10, 10, 0],
+    transition: { duration: 0.5 }
+  };
+
+  const triggerConfetti = () => {
+    const count = 200;
+    const defaults: Options = {
+      origin: { y: 0.7 }
+    };
+
+    function fire(particleRatio: number, opts: Options) {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio)
+      });
+    }
+
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+
+    fire(0.2, {
+      spread: 60,
+    });
+
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -53,10 +108,13 @@ export default function ContactForm() {
 
       setIsSending(false);
       setSuccess(true);
+      setIsAnimating(true);
+      triggerConfetti();
       setFormData({ fullName: "", email: "", message: "" });
     } catch {
       setIsSending(false);
       setError(true);
+      setIsAnimating(true);
     }
   };
 
@@ -112,15 +170,23 @@ export default function ContactForm() {
             </motion.div>
           </div>
         </div>
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants}
+          animate={
+            isAnimating
+              ? success
+                ? successAnimation
+                : error
+                ? errorAnimation
+                : {}
+              : {}
+          }
+          onAnimationComplete={() => setIsAnimating(false)}
+        >
           <Button type="submit" variant="primary" size="lg" className="w-full mt-8" disabled={isSending}>
             {isSending ? "Sending..." : "Send Message"}
           </Button>
         </motion.div>
       </form>
-
-      {success && <motion.p className="text-green-500 mt-4">Message sent successfully!</motion.p>}
-      {error && <motion.p className="text-red-500 mt-4">Failed to send message. Try again.</motion.p>}
     </motion.div>
   );
 }
