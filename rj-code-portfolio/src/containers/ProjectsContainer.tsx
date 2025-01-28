@@ -6,6 +6,12 @@ import { PinContainer } from "../components/ui/Pin";
 import Button from "../components/ui/Button";
 
 export default function ProjectsContainer() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section id="projects">
       <div className="relative py-32 container mx-auto px-6">
@@ -130,7 +136,7 @@ export default function ProjectsContainer() {
           <p className="text-xl text-gray-400 mb-6">
             Want to collaborate with us? Let&apos;s bring your ideas to life!
           </p>
-          <Button variant="primary" size="lg">
+          <Button variant="primary" size="lg" onClick={scrollToContact}>
             Contact Us
           </Button>
         </div>

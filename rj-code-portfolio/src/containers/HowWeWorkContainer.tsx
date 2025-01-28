@@ -67,6 +67,13 @@ export default function HowWeWorkContainer() {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="howWeWork" className="w-full py-24 overflow-hidden">
       <motion.div 
@@ -132,7 +139,7 @@ export default function HowWeWorkContainer() {
           <Button 
             variant="primary" 
             size="lg"
-            onClick={() => window.location.href = '#contact'}
+            onClick={scrollToContact}
           >
             Contact Us
           </Button>

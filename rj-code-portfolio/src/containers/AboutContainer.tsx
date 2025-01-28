@@ -6,6 +6,12 @@ import Button from "../components/ui/Button";
 import { technologies } from '../const/techItems';
 
 export default function AboutContainer() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section id="about" className="relative min-h-screen py-32 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -84,6 +90,7 @@ export default function AboutContainer() {
           </p>
           <Button 
             size="lg"
+            onClick={scrollToContact}
             className="px-8 py-6 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
           >
             Get in Touch

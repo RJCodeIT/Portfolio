@@ -1,11 +1,26 @@
-import Image from 'next/image';
+"use client";
 
-const envelopeIcon = '/envelope.svg';
-const githubIcon = '/github.svg';
-const linkedinIcon = '/linkedin.svg';
-const instagramIcon = '/instagram.svg';
+import Image from "next/image";
+
+const envelopeIcon = "/envelope.svg";
+const githubIcon = "/github.svg";
+const linkedinIcon = "/linkedin.svg";
+const instagramIcon = "/instagram.svg";
 
 export default function Footer() {
+  const handleScroll = (id: string) => {
+    if (id === "home") {
+      // Scrollowanie do samej góry strony
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Scrollowanie do sekcji na obecnej stronie
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -19,8 +34,9 @@ export default function Footer() {
               RJ Code
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Transforming ideas into elegant digital solutions. Specializing in web development,
-              software engineering, and creative tech solutions.
+              Transforming ideas into elegant digital solutions. Specializing
+              in web development, software engineering, and creative tech
+              solutions.
             </p>
           </div>
 
@@ -28,14 +44,19 @@ export default function Footer() {
           <div className="space-y-5">
             <h4 className="text-xl font-semibold text-gray-100">Quick Links</h4>
             <ul className="space-y-3">
-              {['Home', 'Projects', 'About', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
+              {[
+                { label: "Home", id: "home" },
+                { label: "Projects", id: "projects" },
+                { label: "About", id: "about" },
+                { label: "Contact", id: "contact" },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleScroll(item.id)}
                     className="text-gray-400 hover:text-white transition-all duration-300 text-sm hover:translate-x-2 inline-block transform hover:shadow-lg"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -50,7 +71,13 @@ export default function Footer() {
                 className="flex items-center text-gray-400 hover:text-white transition-all duration-300 text-sm group hover:translate-x-1"
               >
                 <div className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform duration-300">
-                  <Image src={envelopeIcon} alt="Envelope Icon" width={20} height={20} className="brightness-0 invert" />
+                  <Image
+                    src={envelopeIcon}
+                    alt="Envelope Icon"
+                    width={20}
+                    height={20}
+                    className="brightness-0 invert"
+                  />
                 </div>
                 contact@rjcodeit.com
               </a>
@@ -66,9 +93,9 @@ export default function Footer() {
             </div>
             <div className="flex space-x-8">
               {[
-                { icon: githubIcon, href: 'https://github.com' },
-                { icon: linkedinIcon, href: 'https://linkedin.com' },
-                { icon: instagramIcon, href: 'https://instagram.com' },
+                { icon: githubIcon, href: "https://github.com" },
+                { icon: linkedinIcon, href: "https://linkedin.com" },
+                { icon: instagramIcon, href: "https://instagram.com" },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -78,7 +105,13 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="h-6 w-6 hover:scale-110 transform transition-transform duration-300">
-                    <Image src={social.icon} alt="Social Icon" width={24} height={24} className="brightness-0 invert" />
+                    <Image
+                      src={social.icon}
+                      alt="Social Icon"
+                      width={24}
+                      height={24}
+                      className="brightness-0 invert"
+                    />
                   </div>
                 </a>
               ))}

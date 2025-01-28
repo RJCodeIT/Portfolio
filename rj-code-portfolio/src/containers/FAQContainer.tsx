@@ -35,7 +35,7 @@ export default function FAQContainer() {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+  
   return (
     <section id="faq" className="w-full py-32">
       <motion.div 

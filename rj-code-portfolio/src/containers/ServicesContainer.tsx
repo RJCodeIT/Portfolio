@@ -9,6 +9,12 @@ import Image from 'next/image';
 const captions = ["Web Applications", "Websites", "Progressive Web Apps", "API Integrations"];
 
 export default function ServicesContainer() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section id="services" className="min-h-screen py-24">
       <div className="container mx-auto px-4">
@@ -37,7 +43,7 @@ export default function ServicesContainer() {
             Have a project in mind? Let&apos;s bring it to life!
           </h3>
           <Link href="#contact">
-            <Button variant="primary" size="lg" className="font-medium">
+            <Button variant="primary" size="lg" className="font-medium" onClick={scrollToContact}>
               Contact Us Today
             </Button>
           </Link>
