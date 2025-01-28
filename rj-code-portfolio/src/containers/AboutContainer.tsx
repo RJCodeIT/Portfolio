@@ -1,28 +1,11 @@
 'use client';
-import React, { JSX } from 'react';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiNextdotjs, SiExpress, SiMongodb } from 'react-icons/si';
+import React from 'react';
+import Image from 'next/image';
 import { Tooltip } from '../components/ui/Tooltip';
 import Button from "../components/ui/Button";
-
-interface TechItem {
-  name: string;
-  icon: JSX.Element;
-  description: string;
-}
+import { technologies } from '../const/techItems';
 
 export default function AboutContainer() {
-  const technologies: TechItem[] = [
-    { name: 'React', icon: <FaReact className="text-4xl text-[#61DAFB]" />, description: 'A library for building user interfaces' },
-    { name: 'Next.js', icon: <SiNextdotjs className="text-4xl text-black" />, description: 'The React Framework for Production' },
-    { name: 'JavaScript', icon: <SiJavascript className="text-4xl text-[#F7DF1E]" />, description: 'The language of the web' },
-    { name: 'TypeScript', icon: <SiTypescript className="text-4xl text-[#3178C6]" />, description: 'Typed JavaScript at Any Scale' },
-    { name: 'Node.js', icon: <FaNodeJs className="text-4xl text-[#339933]" />, description: 'JavaScript runtime built on Chrome\'s V8 engine' },
-    { name: 'Express', icon: <SiExpress className="text-4xl text-black" />, description: 'Fast, unopinionated web framework for Node.js' },
-    { name: 'MongoDB', icon: <SiMongodb className="text-4xl text-[#47A248]" />, description: 'The most popular NoSQL database' },
-    { name: 'MS SQL Server', icon: <FaDatabase className="text-4xl text-[#CC2927]" />, description: 'Enterprise-grade relational database management system' },
-  ];
-
   return (
     <section id="about" className="relative min-h-screen py-32 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -76,21 +59,21 @@ export default function AboutContainer() {
               We rely on a robust tech stack to deliver reliable and efficient solutions for our clients. 
               Here&apos;s what we work with:
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 mt-10">
               {technologies.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="group"
-                >
-                  <Tooltip content={tech.description}>
-                    <div className="flex flex-col items-center p-6 backdrop-blur-sm rounded-2xl border border-white/10 bg-white/5 transition-all hover:bg-white/10 hover:scale-105 hover:-translate-y-1">
-                      <div className="mb-4">
-                        {tech.icon}
-                      </div>
-                      <span className="text-gray-300 font-medium">{tech.name}</span>
+                <Tooltip key={tech.name} content={tech.description}>
+                  <div className="flex flex-col items-center gap-3 p-5 rounded-xl hover:bg-white/5 transition-colors">
+                    <div className={`w-20 h-20 relative ${tech.className}`}>
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
-                  </Tooltip>
-                </div>
+                    <span className="text-base font-medium text-gray-300">{tech.name}</span>
+                  </div>
+                </Tooltip>
               ))}
             </div>
           </div>

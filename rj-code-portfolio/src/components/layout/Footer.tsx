@@ -1,11 +1,15 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
+import Image from 'next/image';
+
+const envelopeIcon = '/envelope.svg';
+const githubIcon = '/github.svg';
+const linkedinIcon = '/linkedin.svg';
+const instagramIcon = '/instagram.svg';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className=" from-gray-900 via-gray-800 to-gray-900 text-white relative">
+    <footer className="from-gray-900 via-gray-800 to-gray-900 text-white relative backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-2xl">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
@@ -45,7 +49,9 @@ export default function Footer() {
                 href="mailto:contact@rjcodeit.com"
                 className="flex items-center text-gray-400 hover:text-white transition-all duration-300 text-sm group hover:translate-x-1"
               >
-                <HiMail className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                <div className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform duration-300">
+                  <Image src={envelopeIcon} alt="Envelope Icon" width={20} height={20} className="brightness-0 invert" />
+                </div>
                 contact@rjcodeit.com
               </a>
             </div>
@@ -60,9 +66,9 @@ export default function Footer() {
             </div>
             <div className="flex space-x-8">
               {[
-                { icon: FaGithub, href: 'https://github.com' },
-                { icon: FaLinkedin, href: 'https://linkedin.com' },
-                { icon: FaTwitter, href: 'https://twitter.com' },
+                { icon: githubIcon, href: 'https://github.com' },
+                { icon: linkedinIcon, href: 'https://linkedin.com' },
+                { icon: instagramIcon, href: 'https://instagram.com' },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -71,7 +77,9 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1"
                 >
-                  <social.icon className="h-6 w-6 hover:scale-110 transform transition-transform duration-300" />
+                  <div className="h-6 w-6 hover:scale-110 transform transition-transform duration-300">
+                    <Image src={social.icon} alt="Social Icon" width={24} height={24} className="brightness-0 invert" />
+                  </div>
                 </a>
               ))}
             </div>
