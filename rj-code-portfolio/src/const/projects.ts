@@ -3,9 +3,9 @@ export const projects = [
     id: 1,
     title: "Sneaker Finder",
     des: "Sneaker Finder website",
-    img: "/pawnshop.svg",
+    img: "/sneakerfinder.svg",
     iconLists: ["/react.svg", "/tailwind.svg", "/typescript.svg", "/vite.svg", "/mongodb.svg"],
-    link: "/ui.earth.com",
+    link: "https://github.com/RJCodeIT/Sneaker_Finder",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const projects = [
     des: "My Parish website",
     img: "/pawnshop.svg",
     iconLists: ["/nextjs.svg", "/typescript.svg", "/tailwind.svg", "/vercel.svg", "/microsoftSqlServer.svg"], 
-    link: "/ui.yoom.com",
+    link: "https://github.com/RJCodeIT/My_Parish",
   },
   {
     id: 3,
@@ -21,14 +21,14 @@ export const projects = [
     des: "Pawnshop website",
     img: "/pawnshop.svg",
     iconLists: ["/react.svg", "/tailwind.svg", "/typescript.svg", "/vite.svg", "/microsoftSqlServer.svg"],
-    link: "/ui.aiimg.com",
+    link: "https://github.com/RJCodeIT/Pawnshop",
   },
   {
     id: 4,
     title: "Alpacarnia",
     des: "Alpacarnia website",
-    img: "/pawnshop.svg",
+    img: "/alpacarnia.svg",
     iconLists: ["/react.svg", "/tailwind.svg", "/typescript.svg", "/vite.svg", "/mongodb.svg"],
-    link: "/ui.apple.com",
+    link: "https://github.com/RJCodeIT/Alpacarnia",
   },
 ];
