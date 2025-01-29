@@ -52,7 +52,7 @@ export default function ContactInformation() {
               icon: linkedinIcon,
               label: "Connect with us",
               value: "LinkedIn Profile",
-              link: "#",
+              link: "https://www.linkedin.com/company/rj-code",
             },
             {
               icon: githubIcon,

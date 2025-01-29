@@ -94,8 +94,8 @@ export default function Footer() {
             <div className="flex space-x-8">
               {[
                 { icon: githubIcon, href: "https://github.com/RJCodeIT" },
-                { icon: linkedinIcon, href: "https://linkedin.com" },
-                { icon: instagramIcon, href: "https://instagram.com" },
+                { icon: linkedinIcon, href: "https://www.linkedin.com/company/rj-code" },
+                { icon: instagramIcon, href: "https://www.instagram.com/rjcodeit/" },
               ].map((social, index) => (
                 <a
                   key={index}
