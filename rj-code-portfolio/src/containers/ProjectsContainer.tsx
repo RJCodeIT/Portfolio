@@ -74,7 +74,7 @@ export default function ProjectsContainer() {
                   {item.des}
                 </p>
 
-                <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-7 mb-3">
                   <div className="flex items-center">
                     {item.iconLists.map((icon, index) => (
                       <div
@@ -97,34 +97,41 @@ export default function ProjectsContainer() {
                     ))}
                   </div>
 
-                  <div className="flex items-center group">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-white group-hover:text-cyan-400 transition-colors">
-                      Check Live Site
-                    </p>
-                    <div className="relative ml-2 w-6 h-6">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                      >
-                        <path
-                          d="M7 17L17 7M17 7H7M17 7V17"
-                          stroke="url(#arrow-gradient)"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <defs>
-                          <linearGradient id="arrow-gradient" x1="7" y1="7" x2="17" y2="17" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#4F46E5" />
-                            <stop offset="1" stopColor="#22D3EE" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    </div>
+                  <div className="flex items-center group mt-4 sm:mt-0">
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:text-cyan-400 transition-colors"
+                    >
+                      <p className="flex lg:text-xl md:text-xs text-sm text-white group-hover:text-cyan-400 transition-colors">
+                        Check Live Site
+                      </p>
+                      <div className="relative ml-2 w-6 h-6">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                        >
+                          <path
+                            d="M7 17L17 7M17 7H7M17 7V17"
+                            stroke="url(#arrow-gradient)"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <defs>
+                            <linearGradient id="arrow-gradient" x1="7" y1="7" x2="17" y2="17" gradientUnits="userSpaceOnUse">
+                              <stop stopColor="#4F46E5" />
+                              <stop offset="1" stopColor="#22D3EE" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </PinContainer>

@@ -76,7 +76,7 @@ export default function ReviewsContainer() {
   return (
     <section 
       id="reviews" 
-      className="relative h-screen overflow-hidden"
+      className="relative min-h-screen overflow-x-hidden py-20 sm:py-32"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -96,18 +96,19 @@ export default function ReviewsContainer() {
         </h1>
       </motion.div>
       
-      <div className="flex items-center justify-center h-full py-20">
-        <div className="grid grid-cols-4 gap-8 px-8 mx-auto max-w-[90vw]">
+      <div className="flex items-center justify-center w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[90vw]">
           {reviews.map((review, index) => {
-            const distanceX = smoothX.get() - (index % 4 + 0.5) / 4;
-            const rowPosition = Math.floor(index / 4) + 0.5;
-            const totalRows = Math.ceil(reviews.length / 4);
+            const colCount = window.innerWidth >= 1280 ? 4 : window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+            const distanceX = smoothX.get() - (index % colCount + 0.5) / colCount;
+            const rowPosition = Math.floor(index / colCount) + 0.5;
+            const totalRows = Math.ceil(reviews.length / colCount);
             const distanceY = smoothY.get() - rowPosition / totalRows;
             
             const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
             const angle = Math.atan2(distanceY, distanceX);
             
-            const entryDelay = (index % 4 * 0.1) + (Math.floor(index / 4) * 0.1);
+            const entryDelay = (index % colCount * 0.1) + (Math.floor(index / colCount) * 0.1);
             
             const baseRepulsion = 180;
             const speedMultiplier = Math.max(mouseSpeed.x, mouseSpeed.y) * 100;
@@ -123,8 +124,8 @@ export default function ReviewsContainer() {
             const spacingForce = 25;
             const neighborRepulsion = reviews.reduce((force, _, idx) => {
               if (idx === index) return force;
-              const xDiff = ((idx % 4) - (index % 4)) / 4;
-              const yDiff = (Math.floor(idx / 4) - Math.floor(index / 4)) / totalRows;
+              const xDiff = ((idx % colCount) - (index % colCount)) / colCount;
+              const yDiff = (Math.floor(idx / colCount) - Math.floor(index / colCount)) / totalRows;
               const cardDistance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
               if (cardDistance < 0.5) {
                 return force + (0.5 - cardDistance) * spacingForce;
