@@ -1,0 +1,49 @@
+{
+    "title": "Nasze Usługi",
+    "subtitle": "Odkryj naszą gamę profesjonalnych usług, dostosowanych do realizacji Twoich pomysłów.",
+    "services": [
+      {
+        "title": "Aplikacje Webowe",
+        "description": "Tworzymy nowoczesne aplikacje webowe dostosowane do potrzeb Twojego biznesu.",
+        "benefits": [
+          "Interaktywne i skalowalne aplikacje oparte na React i Next.js",
+          "Bezpieczne i wydajne backendy z Node.js i MongoDB",
+          "Responsywne projekty dla wszystkich urządzeń, zapewniające płynne doświadczenie użytkownika"
+        ],
+        "caption": "Aplikacje Webowe"
+      },
+      {
+        "title": "Strony Internetowe",
+        "description": "Indywidualnie zaprojektowane strony internetowe, które reprezentują Twoją markę i angażują odbiorców.",
+        "benefits": [
+          "Dopracowane w szczegółach projekty na komputery i urządzenia mobilne",
+          "Strony zoptymalizowane pod SEO i wysoką wydajność",
+          "W pełni konfigurowalne, z intuicyjną integracją CMS"
+        ],
+        "caption": "Strony Internetowe"
+      },
+      {
+        "title": "Progressive Web Apps",
+        "description": "Szybkie, niezawodne i angażujące PWA, łączące najlepsze cechy webu i aplikacji mobilnych.",
+        "benefits": [
+          "Działanie offline i natychmiastowe ładowanie",
+          "Powiadomienia push utrzymujące zaangażowanie użytkowników",
+          "Optymalizacja wydajności i kompatybilność między platformami"
+        ],
+        "caption": "Progressive Web Apps"
+      },
+      {
+        "title": "Integracje API",
+        "description": "Bezproblemowe łączenie systemów dzięki potężnym integracjom API.",
+        "benefits": [
+          "Integracja z usługami firm trzecich (np. bramki płatnicze, CRM, analityka)",
+          "Tworzenie niestandardowych API dopasowanych do unikalnych potrzeb biznesowych",
+          "Bezpieczne i skalowalne rozwiązania zapewniające płynny przepływ danych"
+        ],
+        "caption": "Integracje API"
+      }
+    ],
+    "ctaTitle": "Masz projekt na myśli? Zamieńmy go w rzeczywistość!",
+    "ctaButton": "Skontaktuj się z nami"
+  }
+  

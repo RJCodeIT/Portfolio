@@ -12,6 +12,10 @@ import howWeWorkEn from "../locales/en/howWeWork.json";
 import howWeWorkPl from "../locales/pl/howWeWork.json";
 import reviewsEn from "../locales/en/reviews.json";
 import reviewsPl from "../locales/pl/reviews.json";
+import servicesEn from "../locales/en/services.json";
+import servicesPl from "../locales/pl/services.json";
+import heroEn from "../locales/en/hero.json";
+import heroPl from "../locales/pl/hero.json";
 
 const resources = {
   en: {
@@ -21,6 +25,8 @@ const resources = {
     contact: contactEn,
     howWeWork: howWeWorkEn,
     reviews: reviewsEn,
+    services: servicesEn,
+    hero: heroEn,
   },
   pl: {
     navbar: navbarPl,
@@ -29,6 +35,8 @@ const resources = {
     contact: contactPl,
     howWeWork: howWeWorkPl,
     reviews: reviewsPl,
+    services: servicesPl,
+    hero: heroPl,
   },
 };
 

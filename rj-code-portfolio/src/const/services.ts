@@ -1,46 +1,59 @@
-export const services = [
-  {
-    icon: "/reactBlack.svg",
-    title: "Web Applications",
-    description:
-      "We build modern web applications tailored to your business needs.",
-    benefits: [
-      "Interactive and scalable applications using React and Next.js",
-      "Secure and efficient backends with Node.js and MongoDB",
-      "Responsive designs for all devices, ensuring a seamless user experience",
-    ],
-  },
-  {
-    icon: "/code.svg",
-    title: "Websites",
-    description:
-      "Custom websites designed to represent your brand and engage your audience.",
-    benefits: [
-      "Pixel-perfect designs for desktop and mobile",
-      "SEO-friendly and high-performance websites",
-      "Fully customizable, with intuitive CMS integration",
-    ],
-  },
-  {
-    icon: "/mobile.svg",
-    title: "Progressive Web Apps",
-    description:
-      "Fast, reliable, and engaging PWAs to bridge the gap between web and mobile.",
-    benefits: [
-      "Offline functionality and instant loading",
-      "Push notifications to keep users engaged",
-      "Optimized for performance and cross-platform compatibility",
-    ],
-  },
-  {
-    icon: "/plug.svg",
-    title: "API Integrations",
-    description:
-      "Connect your systems seamlessly with powerful API integrations.",
-    benefits: [
-      "Integration with third-party services (e.g., payment gateways, CRMs, analytics)",
-      "Custom API development to meet unique business requirements",
-      "Secure and scalable solutions for smooth data flow",
-    ],
-  },
-];
+import { useTranslation } from "react-i18next";
+export interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  benefits: string[];
+  caption: string;
+}
+
+export function useServices(): Service[] {
+  const { t } = useTranslation("services");
+
+  return [
+    {
+      icon: "/reactBlack.svg",
+      title: t("services.0.title"),
+      description: t("services.0.description"),
+      benefits: [
+        t("services.0.benefits.0"),
+        t("services.0.benefits.1"),
+        t("services.0.benefits.2")
+      ],
+      caption: t("services.0.caption")
+    },
+    {
+      icon: "/code.svg",
+      title: t("services.1.title"),
+      description: t("services.1.description"),
+      benefits: [
+        t("services.1.benefits.0"),
+        t("services.1.benefits.1"),
+        t("services.1.benefits.2")
+      ],
+      caption: t("services.1.caption")
+    },
+    {
+      icon: "/mobile.svg",
+      title: t("services.2.title"),
+      description: t("services.2.description"),
+      benefits: [
+        t("services.2.benefits.0"),
+        t("services.2.benefits.1"),
+        t("services.2.benefits.2")
+      ],
+      caption: t("services.2.caption")
+    },
+    {
+      icon: "/plug.svg",
+      title: t("services.3.title"),
+      description: t("services.3.description"),
+      benefits: [
+        t("services.3.benefits.0"),
+        t("services.3.benefits.1"),
+        t("services.3.benefits.2")
+      ],
+      caption: t("services.3.caption")
+    }
+  ];
+}

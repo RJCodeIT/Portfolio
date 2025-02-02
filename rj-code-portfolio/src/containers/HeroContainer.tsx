@@ -2,8 +2,11 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export default function HeroContainer() {
+  const { t } = useTranslation("hero");
+
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -21,13 +24,13 @@ export default function HeroContainer() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
         >
-          <motion.span
-            className="inline-block bg-gradient-to-r from-[#8a2be2] via-[#4b0082] to-[#191970] bg-clip-text text-transparent"
+          <motion.div
+            className="block bg-gradient-to-r from-[#8a2be2] via-[#4b0082] to-[#191970] bg-clip-text text-transparent"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{
@@ -37,9 +40,11 @@ export default function HeroContainer() {
               repeatDelay: 1,
             }}
           >
-            Building Future-Ready
-          </motion.span>{" "}
-          <span>Web Solutions</span>
+            {t("title.gradient")}
+          </motion.div>
+          <motion.div className="block">
+            {t("title.solid")}
+          </motion.div>
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
@@ -47,8 +52,7 @@ export default function HeroContainer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
         >
-          We create modern web applications, PWA, Full Stack Apps and seamless
-          API integrations to help your business grow.
+          {t("subtitle")}
         </motion.p>
         <motion.div
           initial={{ scale: 0.9 }}
@@ -60,7 +64,7 @@ export default function HeroContainer() {
           }}
         >
           <Button variant="primary" size="lg" onClick={scrollToAbout}>
-            See Our Work
+            {t("ctaButton")}
           </Button>
         </motion.div>
       </motion.div>
