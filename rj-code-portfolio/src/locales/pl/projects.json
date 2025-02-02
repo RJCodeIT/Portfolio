@@ -1,0 +1,25 @@
+{
+  "title": "Nasze Najnowsze Projekty",
+  "description": "Zobacz projekty, które stworzyliśmy, aby wzmocnić firmy nowoczesnymi rozwiązaniami internetowymi.",
+  "projects": {
+    "sneakerFinder": {
+      "title": "Sneaker Finder",
+      "description": "Strona internetowa Sneaker Finder"
+    },
+    "myParish": {
+      "title": "My Parish",
+      "description": "Strona internetowa My Parish"
+    },
+    "pawnshop": {
+      "title": "Pawnshop",
+      "description": "Strona internetowa Pawnshop"
+    },
+    "alpacarnia": {
+      "title": "Alpacarnia",
+      "description": "Strona internetowa Alpacarnia"
+    }
+  },
+  "checkLiveSite": "Zobacz Stronę",
+  "callToAction": "Chcesz z nami współpracować? Wspólnie zrealizujmy Twoje pomysły!",
+  "contactUs": "Skontaktuj się z nami"
+}

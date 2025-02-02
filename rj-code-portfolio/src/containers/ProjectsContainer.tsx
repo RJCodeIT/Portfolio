@@ -1,17 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslation } from 'react-i18next';
 import { projects } from "../const/projects";
 import { PinContainer } from "../components/ui/Pin";
 import Button from "../components/ui/Button";
 
 export default function ProjectsContainer() {
+  const { t } = useTranslation('projects');
+
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   return (
     <section id="projects">
       <div className="relative py-32 container mx-auto px-6">
@@ -20,9 +24,9 @@ export default function ProjectsContainer() {
           <div className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-secondary/5 rounded-full blur-3xl" />
         </div>
         <div className="text-center mb-32">
-          <h2 className="text-5xl font-bold mb-6 text-white">Our Latest Work</h2>
+          <h2 className="text-5xl font-bold mb-6 text-white">{t('title')}</h2>
           <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
-            Discover the projects we&apos;ve built to empower businesses with cutting-edge web solutions.
+            {t('description')}
           </p>
         </div>
 
@@ -33,7 +37,7 @@ export default function ProjectsContainer() {
               key={item.id}
             >
               <PinContainer
-                title={item.title}
+                title={t(`projects.${item.key}.title`)}
                 href={item.link}
                 className="w-full backdrop-blur-sm bg-opacity-10"
                 containerClassName="w-full"
@@ -53,7 +57,7 @@ export default function ProjectsContainer() {
                   </div>
                   <Image
                     src={item.img}
-                    alt="cover"
+                    alt={t(`projects.${item.key}.title`)}
                     width={400}
                     height={400}
                     className="z-10 absolute bottom-0 drop-shadow-2xl w-auto h-auto"
@@ -62,7 +66,7 @@ export default function ProjectsContainer() {
                 </div>
 
                 <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-white">
-                  {item.title}
+                  {t(`projects.${item.key}.title`)}
                 </h1>
 
                 <p
@@ -72,7 +76,7 @@ export default function ProjectsContainer() {
                     margin: "1vh 0",
                   }}
                 >
-                  {item.des}
+                  {t(`projects.${item.key}.description`)}
                 </p>
 
                 <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-7 mb-3">
@@ -106,7 +110,7 @@ export default function ProjectsContainer() {
                       className="flex items-center hover:text-cyan-400 transition-colors"
                     >
                       <p className="flex lg:text-xl md:text-xs text-sm text-white group-hover:text-cyan-400 transition-colors">
-                        Check Live Site
+                        {t('checkLiveSite')}
                       </p>
                       <div className="relative ml-2 w-6 h-6">
                         <svg
@@ -142,13 +146,13 @@ export default function ProjectsContainer() {
 
         <div className="text-center">
           <p className="text-xl text-gray-400 mb-6">
-            Want to collaborate with us? Let&apos;s bring your ideas to life!
+            {t('callToAction')}
           </p>
           <Button variant="primary" size="lg" onClick={scrollToContact}>
-            Contact Us
+            {t('contactUs')}
           </Button>
         </div>
       </div>
     </section>
   );
-};
+}

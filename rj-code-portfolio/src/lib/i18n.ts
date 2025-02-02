@@ -18,6 +18,8 @@ import heroEn from "../locales/en/hero.json";
 import heroPl from "../locales/pl/hero.json";
 import aboutEn from "../locales/en/about.json";
 import aboutPl from "../locales/pl/about.json";
+import projectsEn from "../locales/en/projects.json";
+import projectsPl from "../locales/pl/projects.json";
 
 const resources = {
   en: {
@@ -29,7 +31,8 @@ const resources = {
     reviews: reviewsEn,
     services: servicesEn,
     hero: heroEn,
-    about: aboutEn
+    about: aboutEn,
+    projects: projectsEn
   },
   pl: {
     navbar: navbarPl,
@@ -40,7 +43,8 @@ const resources = {
     reviews: reviewsPl,
     services: servicesPl,
     hero: heroPl,
-    about: aboutPl
+    about: aboutPl,
+    projects: projectsPl
   },
 };
 

@@ -1,0 +1,25 @@
+{
+  "title": "Our Latest Work",
+  "description": "Discover the projects we've built to empower businesses with cutting-edge web solutions.",
+  "projects": {
+    "sneakerFinder": {
+      "title": "Sneaker Finder",
+      "description": "Sneaker Finder website"
+    },
+    "myParish": {
+      "title": "My Parish",
+      "description": "My Parish website"
+    },
+    "pawnshop": {
+      "title": "Pawnshop",
+      "description": "Pawnshop website"
+    },
+    "alpacarnia": {
+      "title": "Alpacarnia",
+      "description": "Alpacarnia website"
+    }
+  },
+  "checkLiveSite": "Check Live Site",
+  "callToAction": "Want to collaborate with us? Let's bring your ideas to life!",
+  "contactUs": "Contact Us"
+}
