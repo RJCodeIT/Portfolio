@@ -1,0 +1,71 @@
+{
+  "whoWeAre": "Kim Jesteśmy",
+  "whoWeAreDesc": "Poznaj RJ Code IT – zespół dedykowany tworzeniu innowacyjnych rozwiązań internetowych dostosowanych do Twoich potrzeb.",
+  "trustedPartner": "Twój Zaufany Partner w Rozwoju Stron Internetowych",
+  "trustedPartnerDesc": "W RJ Code IT specjalizujemy się w tworzeniu wysokiej jakości aplikacji i stron internetowych. Naszym celem jest wspieranie firm poprzez dostosowane rozwiązania zbudowane przy użyciu nowoczesnych technologii. Cenimy innowacje, współpracę i dostarczanie rezultatów przekraczających oczekiwania.",
+  "whyWorkWithUs": "Dlaczego Warto z Nami Współpracować?",
+  "whyWorkWithUsItems": {
+    "experiencedTeam": {
+      "title": "Doświadczony Zespół",
+      "desc": "Lata doświadczenia w budowaniu skalowalnych i wydajnych rozwiązań internetowych."
+    },
+    "modernTools": {
+      "title": "Nowoczesne Narzędzia",
+      "desc": "Wykorzystujemy najnowsze technologie do tworzenia innowacyjnych produktów."
+    },
+    "customerCentric": {
+      "title": "Podejście Zorientowane na Klienta",
+      "desc": "Słuchamy, dostosowujemy się i tworzymy rozwiązania dopasowane do Twoich unikalnych potrzeb."
+    },
+    "endToEnd": {
+      "title": "Kompleksowe Usługi",
+      "desc": "Od projektu po wdrożenie – zajmiemy się wszystkim."
+    }
+  },
+  "toolsAndTech": "Nasze Narzędzia i Technologie",
+  "toolsAndTechDesc": "Opieramy się na solidnym stosie technologicznym, aby dostarczać niezawodne i wydajne rozwiązania dla naszych klientów. Oto z czym pracujemy:",
+  "technologies": {
+    "react": {
+      "name": "React",
+      "description": "Biblioteka do budowania interfejsów użytkownika"
+    },
+    "nextjs": {
+      "name": "Next.js",
+      "description": "Framework React dla Produkcji"
+    },
+    "javascript": {
+      "name": "JavaScript",
+      "description": "Język programowania stron internetowych"
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "description": "Typowany JavaScript w każdej skali"
+    },
+    "nodejs": {
+      "name": "Node.js",
+      "description": "Środowisko uruchomieniowe JavaScript oparte na silniku V8 Chrome"
+    },
+    "express": {
+      "name": "Express",
+      "description": "Szybki, elastyczny framework dla Node.js"
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "Najpopularniejsza baza danych NoSQL"
+    },
+    "mssql": {
+      "name": "MS SQL Server",
+      "description": "Korporacyjny system zarządzania bazami danych"
+    }
+  },
+  "callToAction": "Chcesz pracować z zespołem, któremu możesz zaufać? Wspólnie zrealizujmy Twoją wizję!",
+  "AboutContainer": {
+    "title": "O Nas",
+    "description": "Poznaj nasz zespół i dowiedz się więcej o tym, co nas inspiruje."
+  },
+  "techItems": {
+    "title": "Nasze Technologie",
+    "description": "Oto lista technologii, których używamy do tworzenia innowacyjnych rozwiązań."
+  },
+  "contactUs": "Skontaktuj sie z nami!"
+}

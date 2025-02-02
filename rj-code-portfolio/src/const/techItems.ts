@@ -1,57 +1,48 @@
 export interface TechItem {
-  name: string;
+  key: string;
   icon: string;
   className: string;
-  description: string;
 }
 
 export const technologies: TechItem[] = [
   { 
-    name: 'React', 
+    key: 'react',
     icon: '/react.svg',
-    className: 'text-[#61DAFB]',
-    description: 'A library for building user interfaces'
+    className: 'text-[#61DAFB]'
   },
   { 
-    name: 'Next.js', 
+    key: 'nextjs',
     icon: '/nextjs.svg',
-    className: 'text-black',
-    description: 'The React Framework for Production'
+    className: 'text-black'
   },
   { 
-    name: 'JavaScript', 
+    key: 'javascript',
     icon: '/javascript.svg',
-    className: 'text-[#F7DF1E]',
-    description: 'The language of the web'
+    className: 'text-[#F7DF1E]'
   },
   { 
-    name: 'TypeScript', 
+    key: 'typescript',
     icon: '/typescript.svg',
-    className: 'text-[#3178C6]',
-    description: 'Typed JavaScript at Any Scale'
+    className: 'text-[#3178C6]'
   },
   { 
-    name: 'Node.js', 
+    key: 'nodejs',
     icon: '/nodejs.svg',
-    className: 'text-[#339933]',
-    description: 'JavaScript runtime built on Chrome\'s V8 engine'
+    className: 'text-[#339933]'
   },
   { 
-    name: 'Express', 
+    key: 'express',
     icon: '/express.svg',
-    className: 'text-black',
-    description: 'Fast, unopinionated web framework for Node.js'
+    className: 'text-black'
   },
   { 
-    name: 'MongoDB', 
+    key: 'mongodb',
     icon: '/mongodb.svg',
-    className: 'text-[#47A248]',
-    description: 'The most popular NoSQL database'
+    className: 'text-[#47A248]'
   },
   { 
-    name: 'MS SQL Server', 
+    key: 'mssql',
     icon: '/microsoftSqlServer.svg',
-    className: 'text-[#CC2927]',
-    description: 'Enterprise-grade relational database management system'
+    className: 'text-[#CC2927]'
   }
 ];
