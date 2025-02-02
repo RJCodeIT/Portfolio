@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 const navVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -62,6 +63,7 @@ const linkVariants = {
 };
 
 const Navbar = () => {
+  const { t } = useTranslation("navbar");
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('');
@@ -151,13 +153,13 @@ const Navbar = () => {
   }, [lastScrollY, activeSection]);
 
   const navLinks = [
-    { href: "#about", text: "About" },
-    { href: "#projects", text: "Projects" },
-    { href: "#services", text: "Services" },
-    { href: "#reviews", text: "Reviews" },
-    { href: "#howWeWork", text: "How we work" },
-    { href: "#contact", text: "Contact" },
-    { href: "#faq", text: "FAQ" }
+    { href: "#about", text: t("about") },
+    { href: "#projects", text: t("projects") },
+    { href: "#services", text: t("services") },
+    { href: "#reviews", text: t("reviews") },
+    { href: "#howWeWork", text: t("howWeWork") },
+    { href: "#contact", text: t("contact") },
+    { href: "#faq", text: t("faq") }
   ];
 
   return (

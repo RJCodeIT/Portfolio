@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 export default function HeroContainer() {
   const scrollToAbout = () => {
@@ -12,6 +13,7 @@ export default function HeroContainer() {
 
   return (
     <section className="h-screen w-full flex flex-col items-center justify-center text-white px-4">
+      <LanguageSwitcher />
       <motion.div
         className="max-w-4xl text-center"
         initial={{ opacity: 0, y: -50 }}
