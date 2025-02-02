@@ -1,0 +1,25 @@
+{
+  "title": "OPINIE",
+  "reviews": [
+    {
+      "name": "John Doe",
+      "role": "Inżynier Oprogramowania",
+      "content": "Wyjątkowa praca! Dbałość o szczegóły i wiedza techniczna zaprezentowana w tym portfolio są imponujące."
+    },
+    {
+      "name": "Sarah Smith",
+      "role": "Projektant UX",
+      "content": "Projekt UI/UX jest zarówno piękny, jak i funkcjonalny. Naprawdę pod wrażeniem płynnych animacji i responsywności."
+    },
+    {
+      "name": "Mike Johnson",
+      "role": "Kierownik Projektu",
+      "content": "Świetna organizacja projektu i czysta struktura kodu. Pokazuje solidne zrozumienie nowoczesnych praktyk programistycznych."
+    },
+    {
+      "name": "Emily Brown",
+      "role": "Programista Frontend",
+      "content": "Animacje i interaktywne elementy są niesamowicie dobrze zaimplementowane. Bardzo dopracowana praca!"
+    }
+  ]
+}

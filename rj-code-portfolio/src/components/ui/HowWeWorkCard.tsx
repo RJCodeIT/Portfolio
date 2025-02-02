@@ -9,7 +9,7 @@ interface HowWeWorkCardProps {
 
 export default function HowWeWorkCard({ icon, title, content, stepNumber }: HowWeWorkCardProps) {
   return (
-    <div className="flex flex-col items-start w-full h-[340px] bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-fadeIn relative overflow-hidden group border border-white/20">
+    <div className="flex flex-col items-start w-full h-[400px] bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-fadeIn relative overflow-hidden group border border-white/20">
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_1px_1px,#fff_1px,transparent_0)] bg-[length:32px_32px] pointer-events-none" />
       <div className="absolute top-6 right-6">
         <span className="text-white font-bold text-xl bg-white/10 backdrop-blur-md w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white/20 shadow-lg border border-white/20">

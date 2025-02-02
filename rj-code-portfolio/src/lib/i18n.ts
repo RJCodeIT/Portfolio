@@ -8,10 +8,28 @@ import faqEn from "../locales/en/faq.json";
 import faqPl from "../locales/pl/faq.json";
 import contactEn from "../locales/en/contact.json";
 import contactPl from "../locales/pl/contact.json";
+import howWeWorkEn from "../locales/en/howWeWork.json";
+import howWeWorkPl from "../locales/pl/howWeWork.json";
+import reviewsEn from "../locales/en/reviews.json";
+import reviewsPl from "../locales/pl/reviews.json";
 
 const resources = {
-  en: { navbar: navbarEn, footer: footerEn, faq: faqEn, contact: contactEn },
-  pl: { navbar: navbarPl, footer: footerPl, faq: faqPl, contact: contactPl },
+  en: {
+    navbar: navbarEn,
+    footer: footerEn,
+    faq: faqEn,
+    contact: contactEn,
+    howWeWork: howWeWorkEn,
+    reviews: reviewsEn,
+  },
+  pl: {
+    navbar: navbarPl,
+    footer: footerPl,
+    faq: faqPl,
+    contact: contactPl,
+    howWeWork: howWeWorkPl,
+    reviews: reviewsPl,
+  },
 };
 
 i18n.use(initReactI18next).init({

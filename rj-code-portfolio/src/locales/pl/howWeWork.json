@@ -1,0 +1,24 @@
+{
+  "title": "Przejrzysty proces",
+  "subtitle": "Krok po kroku przekształcimy Twoją wizję w rzeczywistość",
+  "steps": [
+    {
+      "title": "Konsultacje",
+      "content": "Zaczynamy od rozmowy, aby zrozumieć Twoje potrzeby, cele biznesowe i oczekiwania. Razem definiujemy wizję i zakres projektu."
+    },
+    {
+      "title": "Propozycja rozwiązania",
+      "content": "Tworzymy dostosowane rozwiązanie, które najlepiej odpowiada Twoim wymaganiom. Przedstawiamy szczegółowy plan działania, szacowany czas realizacji oraz koszt projektu."
+    },
+    {
+      "title": "Realizacja projektu",
+      "content": "Po akceptacji rozpoczynamy proces realizacji. Korzystamy ze sprawdzonych technologii i stosujemy najwyższe standardy kodowania. Regularnie informujemy Cię o postępach."
+    },
+    {
+      "title": "Testowanie i wdrożenie",
+      "content": "Przed finalnym wydaniem projekt przechodzi rygorystyczne testy, aby upewnić się, że wszystko działa bezbłędnie. Pomagamy również w wdrożeniu i uruchomieniu produktu."
+    }
+  ],
+  "ctaTitle": "Gotowy, aby zacząć? Skontaktuj się z nami i zobacz, jak możemy Ci pomóc!",
+  "ctaButton": "Skontaktuj się z nami"
+}

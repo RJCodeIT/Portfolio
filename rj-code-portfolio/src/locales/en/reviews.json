@@ -1,0 +1,25 @@
+{
+  "title": "REVIEWS",
+  "reviews": [
+    {
+      "name": "John Doe",
+      "role": "Software Engineer",
+      "content": "Exceptional work! The attention to detail and technical expertise demonstrated in this portfolio is outstanding."
+    },
+    {
+      "name": "Sarah Smith",
+      "role": "UX Designer",
+      "content": "The UI/UX design is both beautiful and functional. Really impressed with the smooth animations and responsiveness."
+    },
+    {
+      "name": "Mike Johnson",
+      "role": "Project Manager",
+      "content": "Great project organization and clean code structure. Shows strong understanding of modern development practices."
+    },
+    {
+      "name": "Emily Brown",
+      "role": "Frontend Developer",
+      "content": "The animations and interactive elements are incredibly well-implemented. Very polished work!"
+    }
+  ]
+}
