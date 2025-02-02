@@ -12,15 +12,27 @@ export default function ReviewsContainer() {
   const [isHovered, setIsHovered] = useState(false);
   const lastMousePosition = useRef({ x: 0, y: 0 });
   const lastMouseTime = useRef(performance.now());
+  const [colCount, setColCount] = useState(1);
+
+  useEffect(() => {
+    const updateColCount = () => {
+      const width = window.innerWidth;
+      setColCount(width >= 1280 ? 4 : width >= 1024 ? 3 : width >= 640 ? 2 : 1);
+    };
+
+    updateColCount();
+    window.addEventListener('resize', updateColCount);
+    return () => window.removeEventListener('resize', updateColCount);
+  }, []);
 
   // Smooth mouse position with springs
-  const smoothX = useSpring(0, {
+  const smoothX = useSpring(0.5, {
     stiffness: 60,
     damping: 15,
     mass: 0.8
   });
   
-  const smoothY = useSpring(0, {
+  const smoothY = useSpring(0.5, {
     stiffness: 60,
     damping: 15,
     mass: 0.8
@@ -99,7 +111,6 @@ export default function ReviewsContainer() {
       <div className="flex items-center justify-center w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[90vw]">
           {reviews.map((review, index) => {
-            const colCount = window.innerWidth >= 1280 ? 4 : window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
             const distanceX = smoothX.get() - (index % colCount + 0.5) / colCount;
             const rowPosition = Math.floor(index / colCount) + 0.5;
             const totalRows = Math.ceil(reviews.length / colCount);

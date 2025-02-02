@@ -46,6 +46,7 @@ export default function ProjectsContainer() {
                       src="/bg.png" 
                       alt="bgimg"
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover opacity-40"
                       priority
                     />
@@ -54,8 +55,8 @@ export default function ProjectsContainer() {
                     src={item.img}
                     alt="cover"
                     width={400}
-                    height={300}
-                    className="z-10 absolute bottom-0 drop-shadow-2xl"
+                    height={400}
+                    className="z-10 absolute bottom-0 drop-shadow-2xl w-auto h-auto"
                     priority
                   />
                 </div>
@@ -90,7 +91,7 @@ export default function ProjectsContainer() {
                             alt={`technology-${index}`}
                             width={35}
                             height={35}
-                            className="p-1"
+                            className="p-1 w-auto h-auto"
                           />
                         </div>
                       </div>
