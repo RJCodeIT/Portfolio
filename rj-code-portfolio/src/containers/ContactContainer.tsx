@@ -4,8 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
 import ContactInformation from "./ContactInformation";
+import { useTranslation } from "react-i18next";
 
 export default function ContactContainer() {
+  const { t } = useTranslation("contact");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,11 +30,10 @@ export default function ContactContainer() {
       >
         <motion.div className="text-center mb-20">
           <h2 className="text-4xl font-bold mb-6 text-gray-100">
-            Get in Touch with Us!
+            {t("title")}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Have a question or an idea? We&apos;d love to hear from you. Send us
-            a message and we&apos;ll respond as soon as possible.
+            {t("description")}
           </p>
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

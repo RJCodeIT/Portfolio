@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const envelopeIcon = "/envelope.svg";
 const githubIcon = "/github.svg";
@@ -10,6 +11,7 @@ const linkedinIcon = "/linkedin.svg";
 const phoneIcon = "/phone.svg";
 
 export default function ContactInformation() {
+  const { t } = useTranslation("contact");
   const contactItemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
@@ -31,36 +33,19 @@ export default function ContactInformation() {
         className="text-2xl font-semibold mb-8 text-gray-100"
         variants={contactItemVariants}
       >
-        Contact Information
+        {t("contactInfo.title")}
       </motion.h3>
       <div className="space-y-10 flex-grow">
         <div className="space-y-8">
           {[
+            { key: "email", link: "mailto:rjcodeit@gmail.com" },
+            { key: "phone", link: "" },
             {
-              icon: envelopeIcon,
-              label: "Email us at",
-              value: "rjcodeit@gmail.com",
-              link: "mailto:rjcodeit@gmail.com",
-            },
-            {
-              icon: phoneIcon,
-              label: "Call us at",
-              value: "+48 698 952 035 or +48 664 082 178",
-              link: "",
-            },
-            {
-              icon: linkedinIcon,
-              label: "Connect with us",
-              value: "LinkedIn Profile",
+              key: "linkedin",
               link: "https://www.linkedin.com/company/rj-code",
             },
-            {
-              icon: githubIcon,
-              label: "Check our work",
-              value: "GitHub Projects",
-              link: "https://github.com/RJCodeIT",
-            },
-          ].map((item, index) => (
+            { key: "github", link: "https://github.com/RJCodeIT" },
+          ].map(({ key, link }, index) => (
             <motion.div
               key={index}
               className="flex items-center space-x-6 group"
@@ -69,25 +54,35 @@ export default function ContactInformation() {
             >
               <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                 <Image
-                  src={item.icon}
-                  alt={`${item.label} Icon`}
+                  src={
+                    key === "email"
+                      ? envelopeIcon
+                      : key === "phone"
+                      ? phoneIcon
+                      : key === "linkedin"
+                      ? linkedinIcon
+                      : githubIcon
+                  }
+                  alt={`${t(`contactInfo.${key}.label`)} Icon`}
                   width={32}
                   height={32}
                   className="brightness-0 invert"
                 />
               </div>
               <div>
-                <p className="text-sm text-gray-400 mb-1">{item.label}</p>
-                {item.link ? (
+                <p className="text-sm text-gray-400 mb-1">
+                  {t(`contactInfo.${key}.label`)}
+                </p>
+                {link ? (
                   <a
-                    href={item.link}
+                    href={link}
                     className="text-gray-200 hover:text-blue-400 transition-colors duration-200 text-lg"
                   >
-                    {item.value}
+                    {t(`contactInfo.${key}.value`)}
                   </a>
                 ) : (
                   <p className="font-medium text-lg text-gray-200">
-                    {item.value}
+                    {t(`contactInfo.${key}.value`)}
                   </p>
                 )}
               </div>
@@ -98,10 +93,7 @@ export default function ContactInformation() {
           className="pt-8 border-t border-white/10"
           variants={contactItemVariants}
         >
-          <p className="text-gray-400">
-            Have a question or an idea? Reach out via the form or contact
-            details above, and we&apos;ll get back to you soon!
-          </p>
+          <p className="text-gray-400">{t("contactInfo.note")}</p>
         </motion.div>
       </div>
     </motion.div>

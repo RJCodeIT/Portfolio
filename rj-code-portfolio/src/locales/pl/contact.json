@@ -1,0 +1,43 @@
+{
+  "title": "Skontaktuj się z nami!",
+  "description": "Masz pytanie lub pomysł? Chętnie Cię wysłuchamy. Wyślij nam wiadomość, a odpowiemy tak szybko, jak to możliwe.",
+  "button": "Wyślij wiadomość",
+  "sending": "Wysyłanie...",
+  "contactForm": {
+    "title": "Wyślij do nas wiadomość",
+    "fields": {
+      "fullName": {
+        "label": "Imię i nazwisko",
+        "placeholder": "Wpisz swoje imię i nazwisko"
+      },
+      "email": {
+        "label": "Adres e-mail",
+        "placeholder": "Wpisz swój adres e-mail"
+      },
+      "message": {
+        "label": "Wiadomość",
+        "placeholder": "Napisz swoją wiadomość tutaj"
+      }
+    }
+  },
+  "contactInfo": {
+    "title": "Dane kontaktowe",
+    "email": {
+      "label": "Napisz do nas",
+      "value": "rjcodeit@gmail.com"
+    },
+    "phone": {
+      "label": "Zadzwoń do nas",
+      "value": "+48 698 952 035 lub +48 664 082 178"
+    },
+    "linkedin": {
+      "label": "Połącz się z nami",
+      "value": "Profil LinkedIn"
+    },
+    "github": {
+      "label": "Sprawdź nasze projekty",
+      "value": "Projekty na GitHub"
+    },
+    "note": "Masz pytanie lub pomysł? Skontaktuj się przez formularz lub dane kontaktowe powyżej, a my wkrótce się odezwiemy!"
+  }
+}

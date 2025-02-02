@@ -1,33 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 export interface FAQItem {
   question: string;
   answer: string;
   preserveWhitespace?: boolean;
 }
 
-export const faqData: FAQItem[] = [
-  {
-    question: "What kind of projects do you work on?",
-    answer: "We work on a wide range of IT projects, from web applications to complex backend systems. We specialize in technologies such as React, Next.js, Node.js, MongoDB, and TailwindCSS."
-  },
-  {
-    question: "Can you work on an existing project?",
-    answer: "Yes, we offer support for developing existing applications, improving their performance, or adding new features."
-  },
-  {
-    question: "How long does it take to complete a project?",
-    answer: "The project timeline depends on its complexity and requirements. Smaller projects typically take a few weeks, while larger ones can take several months."
-  },
-  {
-    question: "Do you offer technical support after the project is completed?",
-    answer: "Yes, we provide technical support, maintenance, and possible updates after the project is deployed."
-  },
-  {
-    question: "What technologies do you use?",
-    answer: "We use modern technologies, such as:\n• Frontend: React, Next.js, Vite, TailwindCSS\n• Backend: Node.js, Express, MongoDB\n• Others: API integrations, Microsoft Graph",
-    preserveWhitespace: true
-  },
-  {
-    question: "How can I start working with you?",
-    answer: "Simply contact us through the contact form, and we will respond within 24 hours to discuss the project details."
-  }
-];
+export function useFaqData(): FAQItem[] {
+  const { t } = useTranslation("faq");
+
+  return t("faqItems", { returnObjects: true }) as FAQItem[];
+}

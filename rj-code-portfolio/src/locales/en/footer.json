@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "RJ Code",
+    "description": "Transforming ideas into elegant digital solutions. Specializing in web development, software engineering, and creative tech solutions."
+  },
+  "quickLinks": {
+    "title": "Quick Links",
+    "links": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "rjcodeit@gmail.com"
+  },
+  "social": {
+    "github": "https://github.com/RJCodeIT",
+    "linkedin": "https://www.linkedin.com/company/rj-code",
+    "instagram": "https://www.instagram.com/rjcodeit/"
+  },
+  "copyright": "2025 RJCode. All rights reserved."
+}

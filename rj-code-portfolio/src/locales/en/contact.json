@@ -1,0 +1,43 @@
+{
+  "title": "Get in Touch with Us!",
+  "description": "Have a question or an idea? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+  "button": "Send Message",
+  "sending": "Sending...",
+  "contactForm": {
+    "title": "Send Us a Message",
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here"
+      }
+    }
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "email": {
+      "label": "Email us at",
+      "value": "rjcodeit@gmail.com"
+    },
+    "phone": {
+      "label": "Call us at",
+      "value": "+48 698 952 035 or +48 664 082 178"
+    },
+    "linkedin": {
+      "label": "Connect with us",
+      "value": "LinkedIn Profile"
+    },
+    "github": {
+      "label": "Check our work",
+      "value": "GitHub Projects"
+    },
+    "note": "Have a question or an idea? Reach out via the form or contact details above, and we'll get back to you soon!"
+  }
+}

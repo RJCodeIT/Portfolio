@@ -5,9 +5,11 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
-import confetti, { Options } from 'canvas-confetti';
+import confetti, { Options } from "canvas-confetti";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
+  const { t } = useTranslation("contact");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -22,25 +24,25 @@ export default function ContactForm() {
   const successAnimation = {
     scale: [1, 1.2, 1],
     rotate: [0, 10, -10, 0],
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const errorAnimation = {
     x: [0, -10, 10, -10, 10, 0],
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   };
 
   const triggerConfetti = () => {
     const count = 200;
     const defaults: Options = {
-      origin: { y: 0.7 }
+      origin: { y: 0.7 },
     };
 
     function fire(particleRatio: number, opts: Options) {
       confetti({
         ...defaults,
         ...opts,
-        particleCount: Math.floor(count * particleRatio)
+        particleCount: Math.floor(count * particleRatio),
       });
     }
 
@@ -56,14 +58,14 @@ export default function ContactForm() {
     fire(0.35, {
       spread: 100,
       decay: 0.91,
-      scalar: 0.8
+      scalar: 0.8,
     });
 
     fire(0.1, {
       spread: 120,
       startVelocity: 25,
       decay: 0.92,
-      scalar: 1.2
+      scalar: 1.2,
     });
 
     fire(0.1, {
@@ -120,7 +122,11 @@ export default function ContactForm() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -128,16 +134,19 @@ export default function ContactForm() {
       className="backdrop-blur-lg bg-white/10 rounded-2xl shadow-2xl p-8 hover:shadow-3xl transition-all duration-300 border border-white/20 flex flex-col h-full"
       variants={itemVariants}
     >
-      <motion.h3 className="text-2xl font-semibold mb-8 text-gray-100" variants={itemVariants}>
-        Send Us a Message
+      <motion.h3
+        className="text-2xl font-semibold mb-8 text-gray-100"
+        variants={itemVariants}
+      >
+        {t("contactForm.title")}
       </motion.h3>
       <form className="flex-grow" onSubmit={handleSubmit}>
         <div className="space-y-6">
           <div className="grid grid-cols-1 gap-6">
             <motion.div variants={itemVariants}>
               <Input
-                label="Full Name"
-                placeholder="Enter your full name"
+                label={t("contactForm.fields.fullName.label")}
+                placeholder={t("contactForm.fields.fullName.placeholder")}
                 required
                 value={formData.fullName}
                 onChange={handleInputChange}
@@ -147,8 +156,8 @@ export default function ContactForm() {
 
             <motion.div variants={itemVariants}>
               <Input
-                label="Email Address"
-                placeholder="Enter your email address"
+                label={t("contactForm.fields.email.label")}
+                placeholder={t("contactForm.fields.email.placeholder")}
                 type="email"
                 required
                 value={formData.email}
@@ -159,8 +168,8 @@ export default function ContactForm() {
 
             <motion.div variants={itemVariants}>
               <Input
-                label="Message"
-                placeholder="Write your message here"
+                label={t("contactForm.fields.message.label")}
+                placeholder={t("contactForm.fields.message.placeholder")}
                 type="textarea"
                 required
                 value={formData.message}
@@ -170,7 +179,8 @@ export default function ContactForm() {
             </motion.div>
           </div>
         </div>
-        <motion.div variants={itemVariants}
+        <motion.div
+          variants={itemVariants}
           animate={
             isAnimating
               ? success
@@ -182,8 +192,14 @@ export default function ContactForm() {
           }
           onAnimationComplete={() => setIsAnimating(false)}
         >
-          <Button type="submit" variant="primary" size="lg" className="w-full mt-8" disabled={isSending}>
-            {isSending ? "Sending..." : "Send Message"}
+          <Button
+            type="submit"
+            variant="primary"
+            size="lg"
+            className="w-full mt-8"
+            disabled={isSending}
+          >
+            {isSending ? t("sending") : t("button")}
           </Button>
         </motion.div>
       </form>

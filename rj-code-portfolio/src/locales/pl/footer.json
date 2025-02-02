@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "RJ Code",
+    "description": "Przekształcamy pomysły w eleganckie rozwiązania cyfrowe. Specjalizujemy się w tworzeniu stron internetowych, inżynierii oprogramowania i kreatywnych rozwiązaniach technologicznych."
+  },
+  "quickLinks": {
+    "title": "Szybkie linki",
+    "links": {
+      "home": "Strona główna",
+      "projects": "Projekty",
+      "about": "O nas",
+      "contact": "Kontakt"
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "email": "rjcodeit@gmail.com"
+  },
+  "social": {
+    "github": "https://github.com/RJCodeIT",
+    "linkedin": "https://www.linkedin.com/company/rj-code",
+    "instagram": "https://www.instagram.com/rjcodeit/"
+  },
+  "copyright": "2025 RJCode. Wszelkie prawa zastrzeżone."
+}
