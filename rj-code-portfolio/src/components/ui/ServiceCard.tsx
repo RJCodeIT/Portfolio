@@ -39,7 +39,7 @@ export default function ServiceCard({
           <Button 
             variant="ghost" 
             size="lg"
-            className="transform transition-transform duration-500 hover:scale-110"
+            className="transform transition-transform duration-500 hover:scale-110 text-2xl"
           >
             {caption}
           </Button>

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../../lib/i18n";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import CookieConsent from "../CookieConsent";
 
 export default function ClientLayout({
   children,
@@ -24,6 +25,7 @@ export default function ClientLayout({
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

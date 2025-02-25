@@ -1,0 +1,55 @@
+{
+  "title": "Privacy Policy",
+  "sections": {
+    "general": {
+      "title": "1. General Information",
+      "content": "This privacy policy explains how we collect, use, and protect your personal data when you use our website. We place great importance on protecting our users' privacy and complying with GDPR regulations."
+    },
+    "administrator": {
+      "title": "2. Data Administrator",
+      "content": "The administrator of your personal data is RJCode IT Portfolio."
+    },
+    "cookies": {
+      "title": "3. Cookies",
+      "intro": "Our website uses cookies, which are divided into:",
+      "types": {
+        "necessary": {
+          "title": "Necessary cookies",
+          "description": "are essential for the proper functioning of the website. They cannot be disabled as the site would not work correctly."
+        },
+        "analytics": {
+          "title": "Analytical cookies",
+          "description": "help us understand how users interact with our website, allowing us to improve it."
+        }
+      },
+      "preferences": {
+        "title": "Manage Cookie Preferences",
+        "analytics": {
+          "title": "Analytical cookies",
+          "description": "Help us understand how users interact with our website"
+        }
+      }
+    },
+    "rights": {
+      "title": "4. Your Rights",
+      "intro": "Under GDPR, you have the following rights:",
+      "list": [
+        "Right to access your data",
+        "Right to rectification",
+        "Right to erasure (\"right to be forgotten\")",
+        "Right to restrict processing",
+        "Right to data portability",
+        "Right to object",
+        "Right to withdraw consent at any time"
+      ]
+    },
+    "contact": {
+      "title": "5. Contact",
+      "content": "For matters related to personal data protection, you can contact us through the contact form available on the website."
+    },
+    "changes": {
+      "title": "6. Changes to Privacy Policy",
+      "content": "We reserve the right to make changes to this privacy policy. We will inform you about any changes through the website."
+    }
+  }
+}

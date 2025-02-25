@@ -1,0 +1,55 @@
+{
+  "title": "Polityka Prywatności",
+  "sections": {
+    "general": {
+      "title": "1. Informacje ogólne",
+      "content": "Niniejsza polityka prywatności wyjaśnia, w jaki sposób gromadzimy, wykorzystujemy i chronimy Twoje dane osobowe podczas korzystania z naszej strony internetowej. Przywiązujemy szczególną wagę do ochrony prywatności naszych użytkowników i przestrzegania przepisów RODO."
+    },
+    "administrator": {
+      "title": "2. Administrator danych",
+      "content": "Administratorem Twoich danych osobowych jest RJCode IT Portfolio."
+    },
+    "cookies": {
+      "title": "3. Pliki Cookie",
+      "intro": "Nasza strona wykorzystuje pliki cookie, które dzielą się na:",
+      "types": {
+        "necessary": {
+          "title": "Niezbędne pliki cookie",
+          "description": "są konieczne do prawidłowego funkcjonowania strony. Nie można ich wyłączyć, gdyż strona nie mogłaby działać poprawnie."
+        },
+        "analytics": {
+          "title": "Analityczne pliki cookie",
+          "description": "pomagają nam zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam ją ulepszać."
+        }
+      },
+      "preferences": {
+        "title": "Zarządzaj preferencjami plików cookie",
+        "analytics": {
+          "title": "Pliki cookie analityczne",
+          "description": "Pomagają nam zrozumieć, jak użytkownicy korzystają z naszej strony"
+        }
+      }
+    },
+    "rights": {
+      "title": "4. Twoje prawa",
+      "intro": "Zgodnie z RODO, przysługują Ci następujące prawa:",
+      "list": [
+        "Prawo dostępu do swoich danych",
+        "Prawo do sprostowania danych",
+        "Prawo do usunięcia danych (\"prawo do bycia zapomnianym\")",
+        "Prawo do ograniczenia przetwarzania",
+        "Prawo do przenoszenia danych",
+        "Prawo do sprzeciwu",
+        "Prawo do wycofania zgody w dowolnym momencie"
+      ]
+    },
+    "contact": {
+      "title": "5. Kontakt",
+      "content": "W sprawach związanych z ochroną danych osobowych możesz się z nami skontaktować poprzez formularz kontaktowy dostępny na stronie."
+    },
+    "changes": {
+      "title": "6. Zmiany w polityce prywatności",
+      "content": "Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej polityce prywatności. O wszelkich zmianach będziemy informować poprzez stronę internetową."
+    }
+  }
+}

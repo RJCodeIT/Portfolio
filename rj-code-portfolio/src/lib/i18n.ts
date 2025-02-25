@@ -20,6 +20,10 @@ import aboutEn from "../locales/en/about.json";
 import aboutPl from "../locales/pl/about.json";
 import projectsEn from "../locales/en/projects.json";
 import projectsPl from "../locales/pl/projects.json";
+import cookieConsentEn from "../locales/en/cookieConsent.json";
+import cookieConsentPl from "../locales/pl/cookieConsent.json";
+import privacyPolicyEn from "../locales/en/privacyPolicy.json";
+import privacyPolicyPl from "../locales/pl/privacyPolicy.json";
 
 const resources = {
   en: {
@@ -32,7 +36,9 @@ const resources = {
     services: servicesEn,
     hero: heroEn,
     about: aboutEn,
-    projects: projectsEn
+    projects: projectsEn,
+    cookieConsent: cookieConsentEn,
+    privacyPolicy: privacyPolicyEn
   },
   pl: {
     navbar: navbarPl,
@@ -44,7 +50,9 @@ const resources = {
     services: servicesPl,
     hero: heroPl,
     about: aboutPl,
-    projects: projectsPl
+    projects: projectsPl,
+    cookieConsent: cookieConsentPl,
+    privacyPolicy: privacyPolicyPl
   },
 };
 
