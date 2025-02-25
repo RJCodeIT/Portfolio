@@ -22,10 +22,10 @@ export default function ServicesContainer() {
     <section id="services" className="min-h-screen py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6">
             {t("title")}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function ServicesContainer() {
           ))}
         </div>
         <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-8">
             {t("ctaTitle")}
           </h3>
           <Link href="#contact">

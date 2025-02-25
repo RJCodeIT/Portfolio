@@ -22,7 +22,7 @@ export default function ServiceCard({
 
   return (
     <div 
-      className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl transition-all duration-500 max-w-lg mx-auto min-h-[300px] backdrop-blur-sm bg-opacity-50 dark:bg-opacity-50 overflow-hidden"
+      className="rounded-2xl border border-gray-800 bg-gray-900 shadow-lg hover:shadow-xl transition-all duration-500 max-w-lg mx-auto min-h-[300px] backdrop-blur-sm bg-opacity-50 dark:bg-opacity-50 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -64,7 +64,7 @@ export default function ServiceCard({
             {icon}
           </div>
           <h3 
-            className="text-2xl font-bold mb-4 text-gray-900 dark:text-white transform transition-transform duration-500"
+            className="text-2xl font-bold mb-4 text-white transform transition-transform duration-500"
             style={{
               transform: isHovered ? 'translateX(0)' : 'translateX(-100%)',
               opacity: isHovered ? 1 : 0,
@@ -74,7 +74,7 @@ export default function ServiceCard({
             {title}
           </h3>
           <p 
-            className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed"
+            className="text-gray-400 mb-8 leading-relaxed"
             style={{
               transform: isHovered ? 'translateX(0)' : 'translateX(-100%)',
               opacity: isHovered ? 1 : 0,
@@ -87,7 +87,7 @@ export default function ServiceCard({
             {benefits.map((benefit, index) => (
               <li
                 key={index}
-                className="flex items-center text-gray-700 dark:text-gray-300"
+                className="flex items-center text-gray-300"
                 style={{
                   transform: isHovered ? 'translateX(0)' : 'translateX(-100%)',
                   opacity: isHovered ? 1 : 0,
