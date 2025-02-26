@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { useTranslation } from 'react-i18next';
+import { useState } from "react";
 import { projects } from "../const/projects";
 import { PinContainer } from "../components/ui/Pin";
 import Button from "../components/ui/Button";
+import ImageModal from "../components/ui/ImageModal";
 
 export default function ProjectsContainer() {
   const { t } = useTranslation('projects');
+  const [selectedImage, setSelectedImage] = useState<{ url: string; alt: string } | null>(null);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -60,8 +63,16 @@ export default function ProjectsContainer() {
                     alt={t(`projects.${item.key}.title`)}
                     width={400}
                     height={400}
-                    className="z-10 absolute bottom-0 drop-shadow-2xl w-auto h-auto"
+                    className="z-10 absolute bottom-0 drop-shadow-2xl w-auto h-auto cursor-pointer"
                     priority
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setSelectedImage({
+                        url: item.img,
+                        alt: t(`projects.${item.key}.title`)
+                      });
+                    }}
                   />
                 </div>
 
@@ -153,6 +164,13 @@ export default function ProjectsContainer() {
           </Button>
         </div>
       </div>
+      {selectedImage && (
+        <ImageModal
+          imageUrl={selectedImage.url}
+          altText={selectedImage.alt}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </section>
   );
 }
