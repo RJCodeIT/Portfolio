@@ -27,7 +27,7 @@ const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-gray-900 to-gray-800 p-4 shadow-lg transform transition-transform duration-300 ease-in-out translate-y-0">
+    <div className="fixed bottom-0 left-0 right-0 bg-black/20 backdrop-blur-md p-4 shadow-lg transform transition-transform duration-300 ease-in-out translate-y-0 border-t border-white/5">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-sm text-gray-300">
           <p>
@@ -35,7 +35,7 @@ const CookieConsent = () => {
           </p>
           <p className="mt-1">
             {t('preferencesText')}{' '}
-            <a href="/privacyPolicy" className="text-blue-400 hover:text-blue-300 hover:underline transition-colors font-medium">
+            <a href="/privacyPolicy" className="text-white font-bold hover:underline transition-colors">
               {t('privacyPolicyLink')}
             </a>.
           </p>
@@ -43,13 +43,13 @@ const CookieConsent = () => {
         <div className="flex gap-3">
           <button
             onClick={handleDecline}
-            className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-300 bg-[#111142] hover:bg-[#161656] rounded-md transition-colors"
           >
             {t('declineButton')}
           </button>
           <button
             onClick={handleAccept}
-            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-white bg-[#111142] hover:bg-[#161656] rounded-md transition-colors"
           >
             {t('acceptButton')}
           </button>
