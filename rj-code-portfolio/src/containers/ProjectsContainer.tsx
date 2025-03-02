@@ -43,18 +43,14 @@ export default function ProjectsContainer() {
                 containerClassName="w-full"
               >
                 <div className="relative flex items-center justify-center w-full overflow-hidden h-[28vh] lg:h-[38vh] mb-12">
-                  <div
-                    className="relative w-full h-full overflow-hidden rounded-3xl flex items-center justify-center bg-[#0B0F1D]"
-                  >
-                    <Image 
-                      src="/bg.png" 
-                      alt="bgimg"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover opacity-40"
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/bg.png"
+                    alt="background"
+                    fill
+                    className="object-cover opacity-40"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <Image
                     src={item.img}
                     alt={t(`projects.${item.key}.title`)}
