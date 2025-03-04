@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 body {
   background-image: url('/backgrounds/rainingStreaks.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
