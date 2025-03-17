@@ -2,24 +2,24 @@
   "title": "REVIEWS",
   "reviews": [
     {
-      "name": "John Doe",
-      "role": "Software Engineer",
-      "content": "Exceptional work! The attention to detail and technical expertise demonstrated in this portfolio is outstanding."
+      "name": "Dorota",
+      "role": "Alpacarnia",
+      "content": "Polecam najmocniej! Dzięki nowej stronie zarządzam całym procesem rezerwacji z jednego panelu. Panowie pomogli mi określić co powinno się znaleźć na stronie oraz dobrać kolorystykę."
     },
     {
-      "name": "Sarah Smith",
-      "role": "UX Designer",
-      "content": "The UI/UX design is both beautiful and functional. Really impressed with the smooth animations and responsiveness."
+      "name": "Stepan",
+      "role": "Sneaker Finder",
+      "content": "Sklep został wykonany tak jak chciałem. Dobry kontakt z zespołem, czas realizacji przeszedł bezproblemowo. Jestem bardzo zadowolony. Polecam!"
     },
     {
-      "name": "Mike Johnson",
-      "role": "Project Manager",
-      "content": "Great project organization and clean code structure. Shows strong understanding of modern development practices."
+      "name": "Marek",
+      "role": "Pawnshop",
+      "content": "Polecam! Bardzo miła obsługa, wszystko profesjonalne oraz dopięte na ostatni guzik."
     },
     {
-      "name": "Emily Brown",
-      "role": "Frontend Developer",
-      "content": "The animations and interactive elements are incredibly well-implemented. Very polished work!"
+      "name": "Krystian",
+      "role": "Metal Master",
+      "content": "Polecam serdecznie! Strona zrobiona szybko i profesjonalnie. Bardzo miła obsługa godna zaufania i polecenia :)"
     }
   ]
 }
