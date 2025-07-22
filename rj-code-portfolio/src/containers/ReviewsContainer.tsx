@@ -16,16 +16,18 @@ export default function ReviewsContainer() {
   const lastMousePosition = useRef({ x: 0, y: 0 });
   const lastMouseTime = useRef(performance.now());
   const [colCount, setColCount] = useState(1);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    const updateColCount = () => {
+    const updateLayout = () => {
       const width = window.innerWidth;
+      setIsMobile(width < 640);
       setColCount(width >= 1280 ? 4 : width >= 1024 ? 3 : width >= 640 ? 2 : 1);
     };
 
-    updateColCount();
-    window.addEventListener("resize", updateColCount);
-    return () => window.removeEventListener("resize", updateColCount);
+    updateLayout();
+    window.addEventListener("resize", updateLayout);
+    return () => window.removeEventListener("resize", updateLayout);
   }, []);
 
   // Smooth mouse position with springs
@@ -42,17 +44,17 @@ export default function ReviewsContainer() {
   });
 
   useEffect(() => {
-    if (isHovered) {
+    if (isHovered && !isMobile) {
       smoothX.set(mousePosition.x);
       smoothY.set(mousePosition.y);
     } else {
       smoothX.set(0.5);
       smoothY.set(0.5);
     }
-  }, [mousePosition, isHovered, smoothX, smoothY]);
+  }, [mousePosition, isHovered, smoothX, smoothY, isMobile]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current || !isHovered) return;
+    if (!containerRef.current || !isHovered || isMobile) return;
 
     const rect = containerRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
@@ -62,13 +64,9 @@ export default function ReviewsContainer() {
     const deltaTime = currentTime - lastMouseTime.current;
 
     if (deltaTime > 0) {
-      // Calculate speed in both directions with reduced sensitivity
-      const speedX =
-        (Math.abs(x - lastMousePosition.current.x) / deltaTime) * 600;
-      const speedY =
-        (Math.abs(y - lastMousePosition.current.y) / deltaTime) * 600;
+      const speedX = (Math.abs(x - lastMousePosition.current.x) / deltaTime) * 600;
+      const speedY = (Math.abs(y - lastMousePosition.current.y) / deltaTime) * 600;
 
-      // Apply smoothing and limit maximum speed
       const maxSpeed = 1.2;
       setMouseSpeed({
         x: Math.min(speedX, maxSpeed),
@@ -82,7 +80,9 @@ export default function ReviewsContainer() {
   };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    if (!isMobile) {
+      setIsHovered(true);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -116,11 +116,14 @@ export default function ReviewsContainer() {
       <div className="flex items-center justify-center w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[90vw]">
           {reviews.map((review, index) => {
-            const distanceX =
-              smoothX.get() - ((index % colCount) + 0.5) / colCount;
+            const distanceX = !isMobile
+              ? smoothX.get() - ((index % colCount) + 0.5) / colCount
+              : 0;
             const rowPosition = Math.floor(index / colCount) + 0.5;
             const totalRows = Math.ceil(reviews.length / colCount);
-            const distanceY = smoothY.get() - rowPosition / totalRows;
+            const distanceY = !isMobile
+              ? smoothY.get() - rowPosition / totalRows
+              : 0;
 
             const distance = Math.sqrt(
               distanceX * distanceX + distanceY * distanceY
@@ -136,25 +139,28 @@ export default function ReviewsContainer() {
             const horizontalForce = baseRepulsion + speedMultiplier;
             const verticalForce = (baseRepulsion + speedMultiplier) * 1.5;
 
-            const repulsionForce =
-              Math.sqrt(
-                Math.pow(horizontalForce * Math.cos(angle), 2) +
-                  Math.pow(verticalForce * Math.sin(angle), 2)
-              ) * Math.max(0, 1 - distance * 1.2);
+            const repulsionForce = !isMobile
+              ? Math.sqrt(
+                  Math.pow(horizontalForce * Math.cos(angle), 2) +
+                    Math.pow(verticalForce * Math.sin(angle), 2)
+                ) * Math.max(0, 1 - distance * 1.2)
+              : 0;
 
             const spacingForce = 25;
-            const neighborRepulsion = reviews.reduce((force, _, idx) => {
-              if (idx === index) return force;
-              const xDiff = ((idx % colCount) - (index % colCount)) / colCount;
-              const yDiff =
-                (Math.floor(idx / colCount) - Math.floor(index / colCount)) /
-                totalRows;
-              const cardDistance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-              if (cardDistance < 0.5) {
-                return force + (0.5 - cardDistance) * spacingForce;
-              }
-              return force;
-            }, 0);
+            const neighborRepulsion = !isMobile
+              ? reviews.reduce((force, _, idx) => {
+                  if (idx === index) return force;
+                  const xDiff = ((idx % colCount) - (index % colCount)) / colCount;
+                  const yDiff =
+                    (Math.floor(idx / colCount) - Math.floor(index / colCount)) /
+                    totalRows;
+                  const cardDistance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+                  if (cardDistance < 0.5) {
+                    return force + (0.5 - cardDistance) * spacingForce;
+                  }
+                  return force;
+                }, 0)
+              : 0;
 
             return (
               <motion.div
@@ -167,15 +173,15 @@ export default function ReviewsContainer() {
                 animate={{
                   opacity: isInView ? 1 : 0,
                   scale: isInView
-                    ? isHovered
+                    ? !isMobile && isHovered
                       ? 1 + Math.max(0, 0.15 - distance * 0.3)
                       : 1
                     : 0.8,
-                  x: isHovered
+                  x: !isMobile && isHovered
                     ? Math.cos(angle) * -(repulsionForce + neighborRepulsion)
                     : 0,
                   y: isInView
-                    ? isHovered
+                    ? !isMobile && isHovered
                       ? Math.sin(angle) *
                         -(repulsionForce + neighborRepulsion * 1.2)
                       : 0

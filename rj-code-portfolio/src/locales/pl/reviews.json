@@ -2,24 +2,24 @@
   "title": "OPINIE",
   "reviews": [
     {
-      "name": "John Doe",
-      "role": "Inżynier Oprogramowania",
-      "content": "Wyjątkowa praca! Dbałość o szczegóły i wiedza techniczna zaprezentowana w tym portfolio są imponujące."
+      "name": "Dorota",
+      "role": "Alpacarnia",
+      "content": "Polecam najmocniej! Dzięki nowej stronie zarządzam całym procesem rezerwacji z jednego panelu. Panowie pomogli mi określić co powinno się znaleźć na stronie oraz dobrać kolorystykę."
     },
     {
-      "name": "Sarah Smith",
-      "role": "Projektant UX",
-      "content": "Projekt UI/UX jest zarówno piękny, jak i funkcjonalny. Naprawdę pod wrażeniem płynnych animacji i responsywności."
+      "name": "Stepan",
+      "role": "Sneaker Finder",
+      "content": "Sklep został wykonany tak jak chciałem. Dobry kontakt z zespołem, czas realizacji przeszedł bezproblemowo. Jestem bardzo zadowolony. Polecam!"
     },
     {
-      "name": "Mike Johnson",
-      "role": "Kierownik Projektu",
-      "content": "Świetna organizacja projektu i czysta struktura kodu. Pokazuje solidne zrozumienie nowoczesnych praktyk programistycznych."
+      "name": "Marek",
+      "role": "Pawnshop",
+      "content": "Polecam! Bardzo miła obsługa, wszystko profesjonalne oraz dopięte na ostatni guzik."
     },
     {
-      "name": "Emily Brown",
-      "role": "Programista Frontend",
-      "content": "Animacje i interaktywne elementy są niesamowicie dobrze zaimplementowane. Bardzo dopracowana praca!"
+      "name": "Krystian",
+      "role": "Metal Master",
+      "content": "Polecam serdecznie! Strona zrobiona szybko i profesjonalnie. Bardzo miła obsługa godna zaufania i polecenia :)"
     }
   ]
 }
