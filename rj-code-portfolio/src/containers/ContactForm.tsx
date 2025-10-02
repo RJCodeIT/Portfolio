@@ -102,7 +102,7 @@ export default function ContactForm() {
       templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? "[exists]" : "[missing]",
     });
-
+  
     if (!formData.fullName || !formData.email || !formData.message) {
       console.log("Form validation failed: missing required fields");
       setError(true);
@@ -114,7 +114,7 @@ export default function ContactForm() {
       setPrivacyPolicyError(true);
       return;
     }
-
+  
     setIsSending(true);
     setSuccess(false);
     setError(false);
@@ -123,64 +123,51 @@ export default function ContactForm() {
       email: formData.email,
       messageLength: formData.message.length,
     });
-
+  
     try {
-      // Inicjalizacja EmailJS przed wysłaniem
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
-      
-      // Przygotowanie parametrów zgodnie z dokumentacją EmailJS
-      // Dodajemy różne nazwy parametrów, które mogą być używane w szablonie
+      // Przygotowanie parametrów zgodnie z szablonem
       const templateParams = {
-        // Standardowe parametry
-        from_name: formData.fullName,
-        name: formData.fullName,           // alternatywna nazwa
-        fullName: formData.fullName,       // alternatywna nazwa
-        
-        // Email
-        reply_to: formData.email,
-        email: formData.email,             // alternatywna nazwa
-        
-        // Wiadomość
-        message: formData.message,
-        content: formData.message,         // alternatywna nazwa
-        
-        // Dodatkowe informacje
-        subject: "Wiadomość z formularza kontaktowego",
-        to_name: "RJ Code IT",
+        fullName: formData.fullName, // odpowiada {{fullName}}
+        reply_to: formData.email,    // odpowiada {{reply_to}}
+        message: formData.message,   // odpowiada {{message}}
       };
-      
-      // Wysłanie wiadomości
+  
+      // Wysyłka
       const response = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      
+  
       console.log("Email sent successfully:", response);
       setIsSending(false);
       setSuccess(true);
       setIsAnimating(true);
       triggerConfetti();
+  
+      // Reset formularza
       setFormData({ fullName: "", email: "", message: "", privacyPolicy: false });
     } catch (error) {
       console.error("Failed to send email:", error);
-      
-      // Szczegółowa diagnostyka błędu
-      const emailJSError = error as { status?: number };
-      if (emailJSError && emailJSError.status === 412) {
-        console.error("Precondition Failed (412): Sprawdź, czy nazwy parametrów w szablonie EmailJS są zgodne z wysłanymi.");
-        console.log("Szablon powinien zawierać zmienne: {{from_name}}, {{reply_to}}, {{message}} lub podobne.");
+  
+      const emailJSError = error as { status?: number, text?: string };
+      if (emailJSError?.status === 412) {
+        if (emailJSError.text?.includes("Gmail_API: Invalid grant")) {
+          setErrorMessage(t("error") + " - Problem z autoryzacją Gmail. Wejdź do EmailJS i kliknij Reconnect.");
+        } else {
+          setErrorMessage(t("error") + " - Problem z konfiguracją szablonu.");
+        }
+      } else {
+        setErrorMessage(t("error"));
       }
-      
+  
       setIsSending(false);
       setError(true);
       setIsAnimating(true);
-      
-      // Ustawiamy komunikat o błędzie dla użytkownika
-      setErrorMessage(t("error"));
     }
   };
+  
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
