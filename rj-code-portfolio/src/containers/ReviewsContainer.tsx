@@ -98,6 +98,9 @@ export default function ReviewsContainer() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       ref={containerRef}
+      aria-label="Opinie klientów o naszych usługach IT"
+      itemScope
+      itemType="https://schema.org/Review"
     >
       <motion.div
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
@@ -108,10 +111,32 @@ export default function ReviewsContainer() {
         }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <h1 className="text-[12vw] font-bold text-white/5 select-none tracking-wider">
+        <h1 className="text-[12vw] font-bold text-white/5 select-none tracking-wider" itemProp="name">
           {t("title")}
         </h1>
       </motion.div>
+      
+      <div className="container mx-auto px-4 text-center mb-16 relative z-20">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-white mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          itemProp="headline"
+        >
+          {t("title")}
+        </motion.h2>
+        <motion.p 
+          className="text-xl text-gray-300 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          itemProp="description"
+        >
+          {t("subtitle")}
+        </motion.p>
+        <meta itemProp="keywords" content="opinie klientów, referencje, strony internetowe, aplikacje webowe, React, Next.js" />
+      </div>
 
       <div className="flex items-center justify-center w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[90vw]">

@@ -9,6 +9,9 @@ interface ServiceCardProps {
   description: string;
   benefits: string[];
   caption: string;
+  itemProp?: string;
+  itemScope?: boolean;
+  itemType?: string;
 }
 
 export default function ServiceCard({
@@ -17,15 +20,23 @@ export default function ServiceCard({
   description,
   benefits,
   caption,
+  itemProp,
+  itemScope,
+  itemType
 }: ServiceCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
-      className="rounded-2xl border border-gray-800 bg-gray-900 shadow-lg hover:shadow-xl transition-all duration-500 max-w-lg mx-auto min-h-[300px] backdrop-blur-sm bg-opacity-50 dark:bg-opacity-50 overflow-hidden"
+      className="rounded-2xl border border-gray-800 bg-gray-900 shadow-lg hover:shadow-card-hover hover:border-primary/30 transition-all duration-500 max-w-lg mx-auto min-h-[300px] backdrop-blur-sm bg-opacity-50 dark:bg-opacity-50 overflow-hidden group relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      itemProp={itemProp}
+      itemScope={itemScope}
+      itemType={itemType}
     >
+      {/* Glow effect on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="p-8 h-full relative">
         <div 
           className={`
@@ -70,6 +81,7 @@ export default function ServiceCard({
               opacity: isHovered ? 1 : 0,
               transition: 'transform 0.5s ease-out 0.1s, opacity 0.5s ease-out 0.1s'
             }}
+            itemProp="name"
           >
             {title}
           </h3>
@@ -80,6 +92,7 @@ export default function ServiceCard({
               opacity: isHovered ? 1 : 0,
               transition: 'transform 0.5s ease-out 0.2s, opacity 0.5s ease-out 0.2s'
             }}
+            itemProp="description"
           >
             {description}
           </p>

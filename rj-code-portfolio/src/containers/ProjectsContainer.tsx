@@ -45,7 +45,7 @@ export default function ProjectsContainer() {
                 className="w-full backdrop-blur-sm bg-opacity-10"
                 containerClassName="w-full"
               >
-                <div className="relative flex items-center justify-center w-full overflow-hidden h-[28vh] lg:h-[38vh] mb-12">
+                <div className="relative flex items-center justify-center w-full overflow-hidden h-[28vh] lg:h-[38vh] mb-12 rounded-2xl group">
                   <Image
                     src="/bg.png"
                     alt="background"

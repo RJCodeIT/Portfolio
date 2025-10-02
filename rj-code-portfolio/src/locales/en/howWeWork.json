@@ -1,24 +1,24 @@
 {
-  "title": "A transparent process",
-  "subtitle": "Step by step, we'll turn your vision into reality",
+  "title": "IT Project Development Methodology",
+  "subtitle": "A transparent and effective process that guarantees the success of your digital project",
   "steps": [
     {
-      "title": "Consultations",
-      "content": "We start with a conversation to understand your needs, business goals, and expectations. Together, we define the project vision and scope."
+      "title": "Analysis and Consultations",
+      "content": "We begin with an in-depth business analysis to precisely understand your goals, requirements, and expectations. We define key success indicators and develop a strategic vision for your project."
     },
     {
-      "title": "Solution Proposal",
-      "content": "We create a tailored solution that best fits your requirements. We present a detailed action plan, estimated timeline, and project cost."
+      "title": "Design",
+      "content": "Based on the gathered information, we create a comprehensive solution architecture and user interface prototypes. We present a detailed work schedule, development methodology, and transparent project pricing."
     },
     {
-      "title": "Project Implementation",
-      "content": "Once approved, we begin the implementation process. We use proven technologies and adhere to the highest coding standards. You'll be regularly updated on the progress."
+      "title": "Programming and Development",
+      "content": "We implement the solution using modern technologies (React, Next.js, React Native) and best programming practices. We work in Agile methodology, providing regular progress demonstrations and the ability to introduce changes."
     },
     {
       "title": "Testing and Deployment",
-      "content": "Before the final release, the project undergoes rigorous testing to ensure everything works flawlessly. We also assist you with deployment and product launch."
+      "content": "Every project undergoes comprehensive quality, performance, and security testing. After final approval, we conduct professional deployment, server configuration, and provide technical support and training for users."
     }
   ],
-  "ctaTitle": "Ready to get started? Contact us and see how we can help you!",
-  "ctaButton": "Contact Us"
+  "ctaTitle": "Start your project with a professional IT team today!",
+  "ctaButton": "Schedule a Consultation"
 }

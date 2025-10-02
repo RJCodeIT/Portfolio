@@ -1,49 +1,48 @@
 {
-    "title": "Nasze Usługi",
-    "subtitle": "Odkryj naszą gamę profesjonalnych usług, dostosowanych do realizacji Twoich pomysłów.",
+    "title": "Profesjonalne Usługi IT dla Twojego Biznesu",
+    "subtitle": "Oferujemy kompleksowe rozwiązania technologiczne, które pomogą Twojej firmie rozwinąć się w świecie cyfrowym.",
     "services": [
       {
-        "title": "Aplikacje Webowe",
-        "description": "Tworzymy nowoczesne aplikacje webowe dostosowane do potrzeb Twojego biznesu.",
+        "title": "Zaawansowane Aplikacje Webowe",
+        "description": "Projektujemy i wdrażamy wysokowydajne aplikacje webowe, które automatyzują procesy biznesowe i zwiększają efektywność Twojej firmy.",
         "benefits": [
-          "Interaktywne i skalowalne aplikacje oparte na React i Next.js",
-          "Bezpieczne i wydajne backendy z Node.js i MongoDB",
-          "Responsywne projekty dla wszystkich urządzeń, zapewniające płynne doświadczenie użytkownika"
+          "Nowoczesne interfejsy użytkownika z wykorzystaniem React, TypeScript i Next.js",
+          "Skalowalna architektura backendowa oparta na Node.js, Express i bazach danych NoSQL/SQL",
+          "Zoptymalizowana wydajność i bezpieczeństwo na każdym etapie rozwoju aplikacji"
         ],
         "caption": "Aplikacje Webowe"
       },
       {
-        "title": "Strony Internetowe",
-        "description": "Indywidualnie zaprojektowane strony internetowe, które reprezentują Twoją markę i angażują odbiorców.",
+        "title": "Profesjonalne Strony Internetowe",
+        "description": "Tworzymy strony internetowe, które nie tylko świetnie wyglądają, ale przede wszystkim realizują cele biznesowe - przyciągają klientów i generują konwersje.",
         "benefits": [
-          "Dopracowane w szczegółach projekty na komputery i urządzenia mobilne",
-          "Strony zoptymalizowane pod SEO i wysoką wydajność",
-          "W pełni konfigurowalne, z intuicyjną integracją CMS"
+          "Responsywny design dostosowany do wszystkich urządzeń - od smartfonów po duże monitory",
+          "Pełna optymalizacja SEO zapewniająca wysoką widoczność w wyszukiwarkach",
+          "Intuicyjne systemy CMS umożliwiające samodzielne zarządzanie treścią bez wiedzy technicznej"
         ],
         "caption": "Strony Internetowe"
       },
       {
-        "title": "Progressive Web Apps",
-        "description": "Szybkie, niezawodne i angażujące PWA, łączące najlepsze cechy webu i aplikacji mobilnych.",
+        "title": "Aplikacje PWA i Mobilne",
+        "description": "Rozwijamy aplikacje Progressive Web Apps (PWA) oraz natywne aplikacje mobilne, które działają na wszystkich urządzeniach i zapewniają użytkownikom dostęp do Twoich usług 24/7.",
         "benefits": [
-          "Działanie offline i natychmiastowe ładowanie",
-          "Powiadomienia push utrzymujące zaangażowanie użytkowników",
-          "Optymalizacja wydajności i kompatybilność między platformami"
+          "Aplikacje działające offline z błyskawicznym czasem ładowania i instalacją na ekranie głównym",
+          "Natywne aplikacje mobilne dla iOS i Android tworzone z wykorzystaniem React Native",
+          "Zaawansowane funkcje: geolokalizacja, powiadomienia push, płatności mobilne i integracje z urządzeniami"
         ],
-        "caption": "Progressive Web Apps"
+        "caption": "Aplikacje PWA i Mobilne"
       },
       {
-        "title": "Integracje API",
-        "description": "Bezproblemowe łączenie systemów dzięki potężnym integracjom API.",
+        "title": "Integracje Systemowe i API",
+        "description": "Tworzymy zaawansowane interfejsy API i łączymy różne systemy w jedną, spójną infrastrukturę IT, która usprawnia procesy biznesowe i automatyzuje przepływ danych.",
         "benefits": [
-          "Integracja z usługami firm trzecich (np. bramki płatnicze, CRM, analityka)",
-          "Tworzenie niestandardowych API dopasowanych do unikalnych potrzeb biznesowych",
-          "Bezpieczne i skalowalne rozwiązania zapewniające płynny przepływ danych"
+          "Projektowanie i implementacja REST API oraz GraphQL dla aplikacji webowych i mobilnych",
+          "Integracja z zewnętrznymi systemami: płatności online, CRM, ERP, marketing automation",
+          "Automatyzacja procesów biznesowych i synchronizacja danych między różnymi platformami"
         ],
-        "caption": "Integracje API"
+        "caption": "Integracje Systemowe"
       }
     ],
-    "ctaTitle": "Masz projekt na myśli? Zamieńmy go w rzeczywistość!",
-    "ctaButton": "Skontaktuj się z nami"
+    "ctaTitle": "Potrzebujesz profesjonalnego rozwiązania IT dla swojej firmy?",
+    "ctaButton": "Omówmy Twój projekt"
   }
-  

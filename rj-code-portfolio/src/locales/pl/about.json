@@ -1,37 +1,41 @@
 {
-  "whoWeAre": "Kim Jesteśmy",
-  "whoWeAreDesc": "Poznaj RJ Code IT – zespół dedykowany tworzeniu innowacyjnych rozwiązań internetowych dostosowanych do Twoich potrzeb.",
-  "trustedPartner": "Twój Zaufany Partner w Rozwoju Stron Internetowych",
-  "trustedPartnerDesc": "W RJ Code IT specjalizujemy się w tworzeniu wysokiej jakości aplikacji i stron internetowych. Naszym celem jest wspieranie firm poprzez dostosowane rozwiązania zbudowane przy użyciu nowoczesnych technologii. Cenimy innowacje, współpracę i dostarczanie rezultatów przekraczających oczekiwania.",
+  "whoWeAre": "Eksperci w Tworzeniu Rozwiązań Cyfrowych",
+  "whoWeAreDesc": "RJ Code IT to zespół specjalistów tworzących nowoczesne strony internetowe, aplikacje webowe i mobilne oraz systemy PWA dopasowane do indywidualnych potrzeb biznesowych.",
+  "trustedPartner": "Kompleksowe Wsparcie Technologiczne dla Twojego Biznesu",
+  "trustedPartnerDesc": "Specjalizujemy się w tworzeniu wysokiej jakości rozwiązań cyfrowych, które napędzają rozwój Twojej firmy. Łączymy wiedzę techniczną z biznesowym podejściem, dostarczając produkty, które nie tylko wyglądają świetnie, ale przede wszystkim realizują strategiczne cele Twojego przedsiębiorstwa.",
   "whyWorkWithUs": "Dlaczego Warto z Nami Współpracować?",
   "whyWorkWithUsItems": {
     "experiencedTeam": {
       "title": "Doświadczony Zespół",
-      "desc": "Lata doświadczenia w budowaniu skalowalnych i wydajnych rozwiązań internetowych."
+      "desc": "Zespół ekspertów z wieloletnim doświadczeniem w tworzeniu zaawansowanych aplikacji webowych i mobilnych."
     },
     "modernTools": {
-      "title": "Nowoczesne Narzędzia",
-      "desc": "Wykorzystujemy najnowsze technologie do tworzenia innowacyjnych produktów."
+      "title": "Najnowsze Technologie",
+      "desc": "Pracujemy z React, React Native, Next.js i innymi nowoczesnymi frameworkami, zapewniając wydajne i przyszłościowe rozwiązania."
     },
     "customerCentric": {
-      "title": "Podejście Zorientowane na Klienta",
-      "desc": "Słuchamy, dostosowujemy się i tworzymy rozwiązania dopasowane do Twoich unikalnych potrzeb."
+      "title": "Zorientowanie na Rezultaty",
+      "desc": "Koncentrujemy się na dostarczaniu rozwiązań, które przynoszą realne korzyści biznesowe i mierzalne efekty."
     },
     "endToEnd": {
-      "title": "Kompleksowe Usługi",
-      "desc": "Od projektu po wdrożenie – zajmiemy się wszystkim."
+      "title": "Kompleksowa Obsługa",
+      "desc": "Od analizy potrzeb, przez projektowanie UX/UI, programowanie, po wdrożeniu i wsparciu technicznym."
     }
   },
-  "toolsAndTech": "Nasze Narzędzia i Technologie",
-  "toolsAndTechDesc": "Opieramy się na solidnym stosie technologicznym, aby dostarczać niezawodne i wydajne rozwiązania dla naszych klientów. Oto z czym pracujemy:",
+  "toolsAndTech": "Zaawansowany Stos Technologiczny",
+  "toolsAndTechDesc": "Wykorzystujemy sprawdzone i nowoczesne technologie, które gwarantują wydajność, bezpieczeństwo i skalowalność Twojego projektu:",
   "technologies": {
     "react": {
       "name": "React",
-      "description": "Biblioteka do budowania interfejsów użytkownika"
+      "description": "Biblioteka do tworzenia dynamicznych interfejsów użytkownika"
+    },
+    "reactNative": {
+      "name": "React Native",
+      "description": "Framework do tworzenia natywnych aplikacji mobilnych"
     },
     "nextjs": {
       "name": "Next.js",
-      "description": "Framework React dla Produkcji"
+      "description": "Framework React dla wydajnych aplikacji webowych"
     },
     "javascript": {
       "name": "JavaScript",
@@ -58,7 +62,7 @@
       "description": "Korporacyjny system zarządzania bazami danych"
     }
   },
-  "callToAction": "Chcesz pracować z zespołem, któremu możesz zaufać? Wspólnie zrealizujmy Twoją wizję!",
+  "callToAction": "Potrzebujesz profesjonalnego partnera technologicznego? Skontaktuj się z nami i przekształć swoje pomysły w działające rozwiązania!",
   "AboutContainer": {
     "title": "O Nas",
     "description": "Poznaj nasz zespół i dowiedz się więcej o tym, co nas inspiruje."

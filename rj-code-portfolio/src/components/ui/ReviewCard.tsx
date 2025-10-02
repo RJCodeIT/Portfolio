@@ -4,15 +4,18 @@ import { Review } from "@/const/reviews";
 
 interface ReviewCardProps extends Review {
   index: number;
+  itemProp?: string;
+  itemScope?: boolean;
+  itemType?: string;
 }
 
-export default function ReviewCard({ name, role, content, rating, index }: ReviewCardProps) {
+export default function ReviewCard({ name, role, content, rating, index, itemProp, itemScope, itemType }: ReviewCardProps) {
   return (
     <motion.div 
-      className="flex flex-col items-start p-4 sm:p-5 lg:p-6 bg-black/20 backdrop-blur-sm rounded-xl w-full min-h-[180px] sm:min-h-[200px] relative overflow-hidden"
+      className="flex flex-col items-start p-4 sm:p-5 lg:p-6 bg-black/20 backdrop-blur-sm rounded-xl w-full min-h-[180px] sm:min-h-[200px] relative overflow-hidden border border-white/10 hover:border-primary/30 group"
       whileHover={{ 
         scale: 1.05,
-        boxShadow: "0 25px 35px -5px rgba(0, 0, 0, 0.3), 0 15px 15px -5px rgba(0, 0, 0, 0.2)"
+        boxShadow: "0 25px 35px -5px rgba(138, 43, 226, 0.4), 0 15px 15px -5px rgba(75, 0, 130, 0.3)"
       }}
       transition={{ 
         type: "spring", 
@@ -20,17 +23,33 @@ export default function ReviewCard({ name, role, content, rating, index }: Revie
         damping: 25,
         mass: 1
       }}
+      itemProp={itemProp}
+      itemScope={itemScope}
+      itemType={itemType}
     >
-      {/* Background gradient effect */}
+      {/* Enhanced background gradient effect */}
       <div 
-        className="absolute inset-0 opacity-10 bg-gradient-to-br from-blue-500/20 to-purple-500/20"
+        className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20"
         style={{
           transform: `rotate(${index * 45}deg)`
         }}
       />
+      
+      {/* Subtle shine effect on hover */}
+      <motion.div
+        className="absolute inset-0 bg-shimmer opacity-0 group-hover:opacity-100"
+        animate={{
+          x: ['-100%', '100%'],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatDelay: 2,
+        }}
+      />
 
       {rating && (
-        <div className="flex text-yellow-400 mb-3 sm:mb-4 space-x-1">
+        <div className="flex text-yellow-400 mb-3 sm:mb-4 space-x-1 relative z-10">
           {[...Array(rating)].map((_, i) => (
             <motion.span 
               key={i} 
@@ -51,16 +70,17 @@ export default function ReviewCard({ name, role, content, rating, index }: Revie
       )}
       
       <motion.p 
-        className="text-sm sm:text-base text-gray-200 font-light leading-relaxed mb-4 sm:mb-6"
+        className="text-sm sm:text-base text-gray-200 font-light leading-relaxed mb-4 sm:mb-6 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
+        itemProp="reviewBody"
       >
         &quot;{content}&quot;
       </motion.p>
 
       <motion.div 
-        className="mt-auto border-t border-gray-700/50 pt-3 sm:pt-4 w-full"
+        className="mt-auto border-t border-gray-700/50 pt-3 sm:pt-4 w-full relative z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
@@ -70,6 +90,7 @@ export default function ReviewCard({ name, role, content, rating, index }: Revie
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
+          itemProp="author"
         >
           {name}
         </motion.p>

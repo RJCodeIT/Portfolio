@@ -1,32 +1,32 @@
 {
-  "title": "Got questions? We have answers!",
-  "description": "Browse through our frequently asked questions or reach out if you need more information.",
-  "button": "Ask a Question",
+  "title": "Frequently Asked Questions About IT Solutions",
+  "description": "Find answers to the most commonly asked questions about our website development, web application, mobile app services, and software development processes.",
+  "button": "Consult Your Project",
   "faqItems": [
     {
-      "question": "What kind of projects do you work on?",
-      "answer": "We work on a wide range of IT projects, from web applications to complex backend systems. We specialize in technologies such as React, Next.js, Node.js, MongoDB, and TailwindCSS."
+      "question": "What types of IT projects do you handle?",
+      "answer": "We specialize in creating professional websites, SPA web applications, mobile applications (iOS/Android) using React Native, and advanced backend systems. Our solutions are based on modern technologies: React, Next.js, TypeScript, Node.js, MongoDB, and TailwindCSS."
     },
     {
-      "question": "Can you work on an existing project?",
-      "answer": "Yes, we offer support for developing existing applications, improving their performance, or adding new features."
+      "question": "Do you take on development and modernization of existing projects?",
+      "answer": "Yes, we offer comprehensive services for developing and modernizing existing applications. Our activities include technical audits, performance optimization, code refactoring, updating to the latest framework versions, and implementing new functionalities tailored to growing business needs."
     },
     {
-      "question": "How long does it take to complete a project?",
-      "answer": "The project timeline depends on its complexity and requirements. Smaller projects typically take a few weeks, while larger ones can take several months."
+      "question": "What is the average time to complete a website or application project?",
+      "answer": "Project completion time depends on its scope, complexity, and specific requirements. Standard business websites or landing pages are completed within 2-4 weeks. More advanced web applications with admin panels take 4-8 weeks, while comprehensive systems with mobile applications may require 3-6 months. We prepare an individual schedule with specific milestones for each project."
     },
     {
-      "question": "Do you offer technical support after the project is completed?",
-      "answer": "Yes, we provide technical support, maintenance, and possible updates after the project is deployed."
+      "question": "What technical support do you offer after project deployment?",
+      "answer": "We offer comprehensive post-deployment support for all our projects. We standardly provide a 3-month warranty period during which we fix any detected bugs free of charge. Additionally, we offer ongoing technical support packages that include server monitoring, regular security updates, backups, performance optimization, and priority technical assistance in case of failures."
     },
     {
-      "question": "What technologies do you use?",
-      "answer": "We use modern technologies, such as:\n• Frontend: React, Next.js, Vite, TailwindCSS\n• Backend: Node.js, Express, MongoDB\n• Others: API integrations, Microsoft Graph",
+      "question": "What technologies and tools do you use in your projects?",
+      "answer": "We use the latest and proven technologies, tailored to the specific needs of each project:\n\n• Frontend: React, Next.js, TypeScript, TailwindCSS, Framer Motion\n• Mobile apps: React Native, Expo\n• Backend: Node.js, Express, NestJS, GraphQL\n• Databases: MongoDB, PostgreSQL, Firebase\n• DevOps: Docker, CI/CD, AWS, Vercel, Netlify\n• Integrations: REST API, GraphQL, payment gateways, CRM systems, Microsoft Graph",
       "preserveWhitespace": true
     },
     {
-      "question": "How can I start working with you?",
-      "answer": "Simply contact us through the contact form, and we will respond within 24 hours to discuss the project details."
+      "question": "What does the process of starting a project collaboration look like?",
+      "answer": "The collaboration process begins with a free consultation during which we learn about your needs and business goals. Next, we prepare a detailed proposal including the scope of work, schedule, and pricing. After accepting the offer, we sign a contract and begin design work. To get started, simply contact us through the contact form or directly by phone - we'll respond within 24 hours."
     }
   ]
 }

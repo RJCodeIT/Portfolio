@@ -7,26 +7,52 @@ interface FAQCardProps {
   question: string;
   answer: string;
   preserveWhitespace?: boolean;
+  itemProp?: string;
+  itemScope?: boolean;
+  itemType?: string;
 }
 
 export default function FAQCard({
   question,
   answer,
   preserveWhitespace = false,
+  itemProp,
+  itemScope,
+  itemType
 }: FAQCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div 
-      className={`w-full backdrop-blur-md border border-white/10 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 
-      ${isOpen ? 'bg-white/10' : 'bg-white/5'}`}
+      className={`w-full backdrop-blur-md border rounded-xl shadow-lg hover:shadow-card-hover transition-all duration-300 relative overflow-hidden group
+      ${isOpen ? 'bg-white/10 border-primary/30' : 'bg-white/5 border-white/10 hover:border-primary/20'}`}
+      itemProp={itemProp}
+      itemScope={itemScope}
+      itemType={itemType}
     >
+      {/* Gradient background effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Shimmer effect */}
+      <motion.div
+        className="absolute inset-0 bg-shimmer opacity-0 group-hover:opacity-50"
+        animate={{
+          x: ['-100%', '100%'],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatDelay: 3,
+        }}
+      />
+
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-8 text-left flex justify-between items-center gap-8 group"
+        className="w-full p-8 text-left flex justify-between items-center gap-8 group relative z-10"
       >
         <motion.h3 
           className="text-lg font-semibold text-white group-hover:translate-x-1 transition-transform duration-300"
+          itemProp="name"
         >
           {question}
         </motion.h3>
@@ -68,7 +94,7 @@ export default function FAQCard({
               },
               opacity: { duration: 0.2 }
             }}
-            className="overflow-hidden relative"
+            className="overflow-hidden relative z-10"
           >
             <motion.div
               initial={{ x: -20 }}
@@ -76,11 +102,14 @@ export default function FAQCard({
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <p
-                className={`px-8 pb-8 text-white/80 leading-relaxed ${
+                className={`px-8 pb-8 text-white/90 leading-relaxed text-base ${
                   preserveWhitespace ? "whitespace-pre-line" : ""
                 }`}
+                itemProp="acceptedAnswer"
+                itemScope
+                itemType="https://schema.org/Answer"
               >
-                {answer}
+                <span itemProp="text">{answer}</span>
               </p>
             </motion.div>
             <motion.div

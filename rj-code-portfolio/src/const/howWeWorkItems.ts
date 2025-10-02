@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { HiChatBubbleLeftRight, HiWrench, HiComputerDesktop, HiCheckCircle } from "react-icons/hi2";
 
 export interface HowWeWorkStep {
   stepNumber: number;
-  icon: string;
+  icon: React.ComponentType;
   title: string;
   content: string;
 }
@@ -13,25 +14,25 @@ export function useHowWeWorkItems(): HowWeWorkStep[] {
   return [
     {
       stepNumber: 1,
-      icon: "💬",
+      icon: HiChatBubbleLeftRight,
       title: t("steps.0.title"),
       content: t("steps.0.content"),
     },
     {
       stepNumber: 2,
-      icon: "🛠️",
+      icon: HiWrench,
       title: t("steps.1.title"),
       content: t("steps.1.content"),
     },
     {
       stepNumber: 3,
-      icon: "💻",
+      icon: HiComputerDesktop,
       title: t("steps.2.title"),
       content: t("steps.2.content"),
     },
     {
       stepNumber: 4,
-      icon: "✅",
+      icon: HiCheckCircle,
       title: t("steps.3.title"),
       content: t("steps.3.content"),
     },

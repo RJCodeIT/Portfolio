@@ -11,6 +11,11 @@ export const technologies: TechItem[] = [
     className: 'text-[#61DAFB]'
   },
   { 
+    key: 'reactNative',
+    icon: '/react-native.svg',
+    className: 'text-[#61DAFB]'
+  },
+  { 
     key: 'nextjs',
     icon: '/nextjs.svg',
     className: 'text-black'

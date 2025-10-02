@@ -1,10 +1,16 @@
 {
-  "title": "Skontaktuj się z nami!",
-  "description": "Masz pytanie lub pomysł? Chętnie Cię wysłuchamy. Wyślij nam wiadomość, a odpowiemy tak szybko, jak to możliwe.",
+  "title": "Skontaktuj się z Ekspertami IT",
+  "description": "Potrzebujesz profesjonalnej strony internetowej, aplikacji webowej lub mobilnej? Wypełnij formularz kontaktowy lub skontaktuj się z nami bezpośrednio, aby omówić Twój projekt i otrzymać bezpłatną konsultację.",
   "button": "Wyślij wiadomość",
   "sending": "Wysyłanie...",
+  "success": "Wiadomość została wysłana! Dziękujemy za kontakt.",
+  "error": "Wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie później lub skontaktuj się z nami bezpośrednio przez email lub telefon.",
+  "tabs": {
+    "form": "Formularz",
+    "info": "Kontakt bezpośredni"
+  },
   "contactForm": {
-    "title": "Wyślij do nas wiadomość",
+    "title": "Zacznijmy współpracę nad Twoim projektem",
     "fields": {
       "fullName": {
         "label": "Imię i nazwisko",
@@ -17,11 +23,16 @@
       "message": {
         "label": "Wiadomość",
         "placeholder": "Napisz swoją wiadomość tutaj"
+      },
+      "privacyPolicy": {
+        "label": "Akceptuję politykę prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych",
+        "error": "Musisz zaakceptować politykę prywatności, aby wysłać wiadomość",
+        "linkText": "Polityka Prywatności"
       }
     }
   },
   "contactInfo": {
-    "title": "Dane kontaktowe",
+    "title": "Skontaktuj się z nami bezpośrednio",
     "email": {
       "label": "Napisz do nas",
       "value": "rjcodeit@gmail.com"
@@ -38,6 +49,7 @@
       "label": "Sprawdź nasze projekty",
       "value": "Projekty na GitHub"
     },
-    "note": "Masz pytanie lub pomysł? Skontaktuj się przez formularz lub dane kontaktowe powyżej, a my wkrótce się odezwiemy!"
+    "note": "Masz pytania dotyczące rozwoju stron internetowych, aplikacji webowych lub mobilnych? Skontaktuj się z nami przez formularz lub bezpośrednio - odpowiemy w ciągu 24 godzin i zaproponujemy najlepsze rozwiązanie dla Twojego biznesu!",
+    "formHint": "Wskazówka: Możesz również skorzystać z formularza kontaktowego, klikając przycisk \"Wyślij wiadomość\" powyżej."
   }
 }

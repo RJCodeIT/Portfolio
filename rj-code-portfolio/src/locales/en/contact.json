@@ -1,10 +1,16 @@
 {
-  "title": "Get in Touch with Us!",
-  "description": "Have a question or an idea? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+  "title": "Contact Our IT Experts",
+  "description": "Need a professional website, web application, or mobile app? Fill out our contact form or reach out to us directly to discuss your project and receive a free consultation.",
   "button": "Send Message",
   "sending": "Sending...",
+  "success": "Message sent successfully! Thank you for contacting us.",
+  "error": "There was a problem sending your message. Please try again later or contact us directly via email or phone.",
+  "tabs": {
+    "form": "Contact Form",
+    "info": "Direct Contact"
+  },
   "contactForm": {
-    "title": "Send Us a Message",
+    "title": "Let's Start Working on Your Project",
     "fields": {
       "fullName": {
         "label": "Full Name",
@@ -17,11 +23,16 @@
       "message": {
         "label": "Message",
         "placeholder": "Write your message here"
+      },
+      "privacyPolicy": {
+        "label": "I accept the privacy policy and consent to the processing of my personal data",
+        "error": "You must accept the privacy policy to send a message",
+        "linkText": "Privacy Policy"
       }
     }
   },
   "contactInfo": {
-    "title": "Contact Information",
+    "title": "Contact Us Directly",
     "email": {
       "label": "Email us at",
       "value": "rjcodeit@gmail.com"
@@ -38,6 +49,7 @@
       "label": "Check our work",
       "value": "GitHub Projects"
     },
-    "note": "Have a question or an idea? Reach out via the form or contact details above, and we'll get back to you soon!"
+    "note": "Have questions about web development, web applications, or mobile apps? Contact us through the form or directly - we'll respond within 24 hours and propose the best solution for your business!",
+    "formHint": "Tip: You can also use our contact form by clicking the \"Send Message\" button above."
   }
 }

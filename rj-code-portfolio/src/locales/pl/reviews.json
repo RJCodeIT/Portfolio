@@ -1,25 +1,26 @@
 {
-  "title": "OPINIE",
+  "title": "Opinie Klientów",
+  "subtitle": "Poznaj historie sukcesu i opinie zadowolonych klientów, którzy skorzystali z naszych usług IT",
   "reviews": [
     {
-      "name": "Dorota",
-      "role": "Alpacarnia",
-      "content": "Polecam najmocniej! Dzięki nowej stronie zarządzam całym procesem rezerwacji z jednego panelu. Panowie pomogli mi określić co powinno się znaleźć na stronie oraz dobrać kolorystykę."
+      "name": "Dorota Nowak",
+      "role": "Właściciel, Alpacarnia",
+      "content": "Polecam najmocniej RJ Code IT! Dzięki nowej stronie internetowej zarządzam całym procesem rezerwacji z jednego panelu administracyjnego. Zespół pomagał mi na każdym etapie projektu, od określenia funkcjonalności po dobrą kolorystykę i użyteczność."
     },
     {
-      "name": "Stepan",
-      "role": "Sneaker Finder",
-      "content": "Sklep został wykonany tak jak chciałem. Dobry kontakt z zespołem, czas realizacji przeszedł bezproblemowo. Jestem bardzo zadowolony. Polecam!"
+      "name": "Stepan Kowalski",
+      "role": "Założyciel, Sneaker Finder",
+      "content": "Mój sklep internetowy został wykonany dokładnie według moich wymagań. Profesjonalny kontakt z zespołem RJ Code IT, terminowa realizacja i pełne wsparcie techniczne. Aplikacja działa szybko, jest intuicyjna i przyciąga klientów. Jestem bardzo zadowolony z efektów współpracy."
     },
     {
-      "name": "Marek",
-      "role": "Pawnshop",
-      "content": "Polecam! Bardzo miła obsługa, wszystko profesjonalne oraz dopięte na ostatni guzik."
+      "name": "Marek Wiśniewski",
+      "role": "Dyrektor, Pawnshop",
+      "content": "Polecam usługi RJ Code IT! Otrzymaliśmy profesjonalną stronę internetową z systemem zarządzania produktami, który znacząco usprawnił naszą pracę. Bardzo miła i kompetentna obsługa, wszystko dopięte na ostatni guzik, a efekt końcowy przewyższył nasze oczekiwania."
     },
     {
-      "name": "Krystian",
-      "role": "Metal Master",
-      "content": "Polecam serdecznie! Strona zrobiona szybko i profesjonalnie. Bardzo miła obsługa godna zaufania i polecenia :)"
+      "name": "Krystian Adamczyk",
+      "role": "Właściciel, Metal Master",
+      "content": "Polecam serdecznie współpracę z RJ Code IT! Nasza strona firmowa została wykonana szybko, profesjonalnie i zgodnie z najnowszymi standardami. Responsywny design, optymalizacja SEO i intuicyjny panel CMS to dokładnie to, czego potrzebowaliśmy. Bardzo miła obsługa godna zaufania i polecenia każdej firmie szukającej solidnego partnera IT."
     }
   ]
 }

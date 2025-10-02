@@ -1,32 +1,32 @@
 {
-  "title": "Masz pytania? Mamy odpowiedzi!",
-  "description": "Przejrzyj nasze najczęściej zadawane pytania lub skontaktuj się z nami, jeśli potrzebujesz więcej informacji.",
-  "button": "Zadaj pytanie",
+  "title": "Często Zadawane Pytania o Rozwiązania IT",
+  "description": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące naszych usług tworzenia stron internetowych, aplikacji webowych i mobilnych oraz procesów rozwoju oprogramowania.",
+  "button": "Skonsultuj swój projekt",
   "faqItems": [
     {
-      "question": "Nad jakimi projektami pracujecie?",
-      "answer": "Pracujemy nad szerokim zakresem projektów IT, od aplikacji internetowych po złożone systemy backendowe. Specjalizujemy się w technologiach takich jak React, Next.js, Node.js, MongoDB i TailwindCSS."
+      "question": "Jakie rodzaje projektów IT realizujecie?",
+      "answer": "Specjalizujemy się w tworzeniu profesjonalnych stron internetowych, aplikacji webowych typu SPA, aplikacji mobilnych (iOS/Android) z wykorzystaniem React Native oraz zaawansowanych systemów backendowych. Nasze rozwiązania oparte są na nowoczesnych technologiach: React, Next.js, TypeScript, Node.js, MongoDB i TailwindCSS."
     },
     {
-      "question": "Czy możecie pracować nad istniejącym projektem?",
-      "answer": "Tak, oferujemy wsparcie w rozwoju istniejących aplikacji, poprawie ich wydajności oraz dodawaniu nowych funkcji."
+      "question": "Czy podejmujecie się rozwoju i modernizacji istniejących projektów?",
+      "answer": "Tak, oferujemy kompleksowe usługi rozwoju i modernizacji istniejących aplikacji. Nasze działania obejmują audyt techniczny, optymalizację wydajności, refaktoryzację kodu, aktualizację do najnowszych wersji frameworków oraz implementację nowych funkcjonalności dostosowanych do rosnących potrzeb biznesowych."
     },
     {
-      "question": "Ile czasu zajmuje realizacja projektu?",
-      "answer": "Czas realizacji projektu zależy od jego złożoności i wymagań. Mniejsze projekty zazwyczaj zajmują kilka tygodni, podczas gdy większe mogą trwać kilka miesięcy."
+      "question": "Jaki jest przeciętny czas realizacji projektu strony internetowej lub aplikacji?",
+      "answer": "Czas realizacji projektu zależy od jego zakresu, złożoności i specyficznych wymagań. Standardowe strony firmowe lub landing page realizujemy w ciągu 2-4 tygodni. Bardziej zaawansowane aplikacje webowe z panelem administracyjnym zajmują 4-8 tygodni, natomiast kompleksowe systemy z aplikacjami mobilnymi mogą wymagać 3-6 miesięcy. Dla każdego projektu przygotowujemy indywidualny harmonogram z konkretnymi kamieniami milowymi."
     },
     {
-      "question": "Czy oferujecie wsparcie techniczne po zakończeniu projektu?",
-      "answer": "Tak, zapewniamy wsparcie techniczne, konserwację i ewentualne aktualizacje po wdrożeniu projektu."
+      "question": "Jakie wsparcie techniczne oferujecie po wdrożeniu projektu?",
+      "answer": "Oferujemy kompleksowe wsparcie powdrożeniowe dla wszystkich naszych projektów. Standardowo zapewniamy 3-miesięczny okres gwarancyjny, podczas którego bezpłatnie usuwamy wszelkie wykryte błędy. Dodatkowo oferujemy pakiety stałego wsparcia technicznego obejmujące monitoring serwerów, regularne aktualizacje bezpieczeństwa, kopie zapasowe, optymalizację wydajności oraz priorytetową pomoc techniczną w przypadku awarii."
     },
     {
-      "question": "Jakie technologie wykorzystujecie?",
-      "answer": "Używamy nowoczesnych technologii, takich jak:\n• Frontend: React, Next.js, Vite, TailwindCSS\n• Backend: Node.js, Express, MongoDB\n• Inne: Integracje API, Microsoft Graph",
+      "question": "Jakie technologie i narzędzia wykorzystujecie w swoich projektach?",
+      "answer": "Wykorzystujemy najnowsze i sprawdzone technologie, dopasowane do specyficznych potrzeb każdego projektu:\n\n• Frontend: React, Next.js, TypeScript, TailwindCSS, Framer Motion\n• Aplikacje mobilne: React Native, Expo\n• Backend: Node.js, Express, NestJS, GraphQL\n• Bazy danych: MongoDB, PostgreSQL, Firebase\n• DevOps: Docker, CI/CD, AWS, Vercel, Netlify\n• Integracje: REST API, GraphQL, pasarele płatności, systemy CRM, Microsoft Graph",
       "preserveWhitespace": true
     },
     {
-      "question": "Jak mogę rozpocząć współpracę?",
-      "answer": "Skontaktuj się z nami przez formularz kontaktowy, a my odpowiemy w ciągu 24 godzin, aby omówić szczegóły projektu."
+      "question": "Jak wygląda proces rozpoczęcia współpracy nad projektem?",
+      "answer": "Proces współpracy rozpoczyna się od bezpłatnej konsultacji, podczas której poznajemy Twoje potrzeby i cele biznesowe. Następnie przygotowujemy szczegółową propozycję zawierającą zakres prac, harmonogram i wycenę. Po akceptacji oferty podpisujemy umowę i rozpoczynamy prace projektowe. Aby rozpocząć, wystarczy skontaktować się z nami przez formularz kontaktowy lub bezpośrednio telefonicznie - odpowiemy w ciągu 24 godzin."
     }
   ]
 }

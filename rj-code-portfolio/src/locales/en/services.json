@@ -1,49 +1,48 @@
 {
-    "title": "Our Services",
-    "subtitle": "Explore our range of professional services, tailored to bring your ideas to life.",
+    "title": "Professional IT Services for Your Business",
+    "subtitle": "We offer comprehensive technology solutions that will help your company thrive in the digital world.",
     "services": [
       {
-        "title": "Web Applications",
-        "description": "We build modern web applications tailored to your business needs.",
+        "title": "Advanced Web Applications",
+        "description": "We design and implement high-performance web applications that automate business processes and increase your company's efficiency.",
         "benefits": [
-          "Interactive and scalable applications using React and Next.js",
-          "Secure and efficient backends with Node.js and MongoDB",
-          "Responsive designs for all devices, ensuring a seamless user experience"
+          "Modern user interfaces using React, TypeScript, and Next.js",
+          "Scalable backend architecture based on Node.js, Express, and NoSQL/SQL databases",
+          "Optimized performance and security at every stage of application development"
         ],
         "caption": "Web Applications"
       },
       {
-        "title": "Websites",
-        "description": "Custom websites designed to represent your brand and engage your audience.",
+        "title": "Professional Websites",
+        "description": "We create websites that not only look great but primarily achieve business goals - attracting customers and generating conversions.",
         "benefits": [
-          "Pixel-perfect designs for desktop and mobile",
-          "SEO-friendly and high-performance websites",
-          "Fully customizable, with intuitive CMS integration"
+          "Responsive design adapted to all devices - from smartphones to large monitors",
+          "Full SEO optimization ensuring high visibility in search engines",
+          "Intuitive CMS systems allowing independent content management without technical knowledge"
         ],
         "caption": "Websites"
       },
       {
-        "title": "Progressive Web Apps",
-        "description": "Fast, reliable, and engaging PWAs to bridge the gap between web and mobile.",
+        "title": "PWA and Mobile Applications",
+        "description": "We develop Progressive Web Apps (PWA) and native mobile applications that work on all devices and provide users with 24/7 access to your services.",
         "benefits": [
-          "Offline functionality and instant loading",
-          "Push notifications to keep users engaged",
-          "Optimized for performance and cross-platform compatibility"
+          "Applications that work offline with lightning-fast loading times and home screen installation",
+          "Native mobile applications for iOS and Android created using React Native",
+          "Advanced features: geolocation, push notifications, mobile payments, and device integrations"
         ],
-        "caption": "Progressive Web Apps"
+        "caption": "PWA and Mobile Applications"
       },
       {
-        "title": "API Integrations",
-        "description": "Connect your systems seamlessly with powerful API integrations.",
+        "title": "System Integrations and APIs",
+        "description": "We create advanced API interfaces and connect various systems into a single, coherent IT infrastructure that streamlines business processes and automates data flow.",
         "benefits": [
-          "Integration with third-party services (e.g., payment gateways, CRMs, analytics)",
-          "Custom API development to meet unique business requirements",
-          "Secure and scalable solutions for smooth data flow"
+          "Design and implementation of REST API and GraphQL for web and mobile applications",
+          "Integration with external systems: online payments, CRM, ERP, marketing automation",
+          "Business process automation and data synchronization between different platforms"
         ],
-        "caption": "API Integrations"
+        "caption": "System Integrations"
       }
     ],
-    "ctaTitle": "Have a project in mind? Let's bring it to life!",
-    "ctaButton": "Contact Us Today"
+    "ctaTitle": "Need a professional IT solution for your company?",
+    "ctaButton": "Let's Discuss Your Project"
   }
-  

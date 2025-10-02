@@ -1,24 +1,24 @@
 {
-  "title": "Przejrzysty proces",
-  "subtitle": "Krok po kroku przekształcimy Twoją wizję w rzeczywistość",
+  "title": "Metodologia Realizacji Projektów IT",
+  "subtitle": "Przejrzysty i efektywny proces, który gwarantuje sukces Twojego projektu cyfrowego",
   "steps": [
     {
-      "title": "Konsultacje",
-      "content": "Zaczynamy od rozmowy, aby zrozumieć Twoje potrzeby, cele biznesowe i oczekiwania. Razem definiujemy wizję i zakres projektu."
+      "title": "Analiza i Konsultacje",
+      "content": "Rozpoczynamy od dogłębnej analizy biznesowej, aby precyzyjnie zrozumieć Twoje cele, wymagania i oczekiwania. Definiujemy kluczowe wskaźniki sukcesu oraz opracowujemy strategiczną wizję projektu."
     },
     {
-      "title": "Propozycja rozwiązania",
-      "content": "Tworzymy dostosowane rozwiązanie, które najlepiej odpowiada Twoim wymaganiom. Przedstawiamy szczegółowy plan działania, szacowany czas realizacji oraz koszt projektu."
+      "title": "Projektowanie",
+      "content": "Na podstawie zebranych informacji tworzymy kompleksową architekturę rozwiązania oraz prototypy interfejsu użytkownika. Przedstawiamy szczegółowy harmonogram prac, metodologię rozwoju i transparentną wycenę projektu."
     },
     {
-      "title": "Realizacja projektu",
-      "content": "Po akceptacji rozpoczynamy proces realizacji. Korzystamy ze sprawdzonych technologii i stosujemy najwyższe standardy kodowania. Regularnie informujemy Cię o postępach."
+      "title": "Programowanie i Rozwój",
+      "content": "Implementujemy rozwiązanie wykorzystując nowoczesne technologie (React, Next.js, React Native) i najlepsze praktyki programistyczne. Pracujemy w metodologii Agile, zapewniając regularne demonstracje postępów i możliwość wprowadzania zmian."
     },
     {
-      "title": "Testowanie i wdrożenie",
-      "content": "Przed finalnym wydaniem projekt przechodzi rygorystyczne testy, aby upewnić się, że wszystko działa bezbłędnie. Pomagamy również w wdrożeniu i uruchomieniu produktu."
+      "title": "Testowanie i Wdrożenie",
+      "content": "Każdy projekt przechodzi kompleksowe testy jakościowe, wydajnościowe i bezpieczeństwa. Po finalnej akceptacji przeprowadzamy profesjonalne wdrożenie, konfigurację serwerów oraz zapewniamy wsparcie techniczne i szkolenia dla użytkowników."
     }
   ],
-  "ctaTitle": "Gotowy, aby zacząć? Skontaktuj się z nami i zobacz, jak możemy Ci pomóc!",
-  "ctaButton": "Skontaktuj się z nami"
+  "ctaTitle": "Rozpocznij swój projekt z profesjonalnym zespołem IT już dzisiaj!",
+  "ctaButton": "Zaplanuj konsultację"
 }
