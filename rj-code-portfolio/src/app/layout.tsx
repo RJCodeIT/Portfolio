@@ -25,12 +25,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "RJ Code IT | Profesjonalne Rozwiązania Webowe i Mobilne",
+  title: "RJ Code | Profesjonalne Rozwiązania Webowe i Mobilne",
   description: "Tworzymy nowoczesne strony internetowe, aplikacje webowe i mobilne dostosowane do indywidualnych potrzeb biznesowych. Skontaktuj się z nami!",
   keywords: "tworzenie stron internetowych, aplikacje webowe, aplikacje mobilne, React, Next.js, React Native, rozwój oprogramowania",
-  authors: [{ name: "RJ Code IT" }],
-  creator: "RJ Code IT",
-  publisher: "RJ Code IT",
+  authors: [{ name: "RJ Code" }],
+  creator: "RJ Code",
+  publisher: "RJ Code",
   formatDetection: {
     email: false,
     address: false,
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "RJ Code IT | Profesjonalne Rozwiązania Webowe i Mobilne",
+    title: "RJ Code | Profesjonalne Rozwiązania Webowe i Mobilne",
     description: "Tworzymy nowoczesne strony internetowe, aplikacje webowe i mobilne dostosowane do indywidualnych potrzeb biznesowych.",
     url: "https://rjcode.pl",
-    siteName: "RJ Code IT",
+    siteName: "RJ Code",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "RJ Code IT - Profesjonalne Rozwiązania Webowe i Mobilne",
+        alt: "RJ Code - Profesjonalne Rozwiązania Webowe i Mobilne",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RJ Code IT | Profesjonalne Rozwiązania Webowe i Mobilne",
+    title: "RJ Code | Profesjonalne Rozwiązania Webowe i Mobilne",
     description: "Tworzymy nowoczesne strony internetowe, aplikacje webowe i mobilne dostosowane do indywidualnych potrzeb biznesowych.",
     images: ["/og-image.jpg"],
   },
