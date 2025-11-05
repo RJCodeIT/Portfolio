@@ -27,7 +27,7 @@ const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black/20 backdrop-blur-md p-4 shadow-lg transform transition-transform duration-300 ease-in-out translate-y-0 border-t border-white/5">
+    <div className="fixed bottom-0 left-0 right-0 bg-black/20 backdrop-blur-md p-4 shadow-lg transform transition-transform duration-300 ease-in-out translate-y-0 border-t border-white/5 z-[9999]">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-sm text-gray-300">
           <p>
