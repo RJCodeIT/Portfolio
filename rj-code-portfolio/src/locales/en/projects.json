@@ -2,21 +2,21 @@
   "title": "Our Latest Work",
   "description": "Discover the projects we've built to empower businesses with cutting-edge web solutions.",
   "projects": {
-    "sneakerFinder": {
-      "title": "Sneaker Finder",
-      "description": "Sneaker Finder website"
+    "workido": {
+      "title": "Workido",
+      "description": "Workido is an innovative platform designed for freelancers and clients. It allows users to quickly post jobs, find contractors, and manage projects in one place. With an intuitive interface, notification system, and a well-organized category structure, Workido makes collaboration fast, efficient, and seamless."
     },
     "myParish": {
-      "title": "Metal Master",
-      "description": "Metal Master website"
+      "title": "My Parish",
+      "description": "A comprehensive parish management system built for Catholic parishes. It enables administrators and clergy to easily publish Mass intentions, announcements, news, and events. The project also includes modules for managing parish groups and member data. The design focuses on simplicity, accessibility, and an aesthetic consistent with the community’s character."
     },
     "pawnshop": {
       "title": "Pawnshop",
-      "description": "Pawnshop website"
+      "description": "An advanced system designed to support pawnshop operations - including management of pledges, sales, customer records, and reporting. The project emphasizes data security and a clean user interface, ensuring efficient control over daily financial and inventory processes."
     },
     "alpacarnia": {
       "title": "Alpacarnia",
-      "description": "Alpacarnia website"
+      "description": "A modern website created for a company specializing in alpaca breeding and organizing educational and recreational visits. The project combines clean aesthetics with practical functionality, presenting the company’s offer, photo galleries, and contact options - reflecting the brand’s friendly and natural spirit."
     }
   },
   "checkLiveSite": "Check Live Site",

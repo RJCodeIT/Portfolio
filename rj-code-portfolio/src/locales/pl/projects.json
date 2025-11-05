@@ -2,21 +2,21 @@
   "title": "Nasze Najnowsze Projekty",
   "description": "Zobacz projekty, które stworzyliśmy, aby wzmocnić firmy nowoczesnymi rozwiązaniami internetowymi.",
   "projects": {
-    "sneakerFinder": {
-      "title": "Sneaker Finder",
-      "description": "Strona internetowa Sneaker Finder"
+    "workido": {
+      "title": "Workido",
+      "description": "Workido to innowacyjna platforma stworzona z myślą o freelancerach i zleceniodawcach. Umożliwia szybkie dodawanie ogłoszeń, wyszukiwanie wykonawców oraz zarządzanie zleceniami w jednym miejscu. Intuicyjny interfejs, system powiadomień oraz przejrzysty układ kategorii sprawiają, że współpraca między użytkownikami jest szybka i wygodna."
     },
     "myParish": {
-      "title": "Metal Master",
-      "description": "Strona internetowa Metal Master"
+      "title": "Moja Parafia",
+      "description": "Kompleksowy system zarządzania parafią katolicką, pozwalający administratorom i duchownym na łatwe publikowanie intencji mszalnych, ogłoszeń, aktualności i wydarzeń. Projekt obejmuje także moduł do zarządzania grupami parafialnymi oraz danymi parafian. Strona została zaprojektowana z myślą o prostocie obsługi i estetyce zgodnej z charakterem wspólnoty parafialnej."
     },
     "pawnshop": {
       "title": "Pawnshop",
-      "description": "Strona internetowa Pawnshop"
+      "description": "Zaawansowany system wspierający działalność lombardów - umożliwia obsługę zastawów, sprzedaży, ewidencji klientów oraz generowanie raportów. Projekt skupia się na bezpieczeństwie danych i przejrzystości interfejsu, co pozwala na efektywne zarządzanie codziennymi operacjami finansowymi i magazynowymi."
     },
     "alpacarnia": {
       "title": "Alpacarnia",
-      "description": "Strona internetowa Alpacarnia"
+      "description": "Nowoczesna strona internetowa stworzona dla firmy zajmującej się hodowlą alpak oraz organizacją spotkań edukacyjnych i rekreacyjnych. Projekt łączy estetykę z funkcjonalnością - prezentuje ofertę, galerie zdjęć i możliwość kontaktu, podkreślając wyjątkowy, przyjazny charakter marki."
     }
   },
   "checkLiveSite": "Zobacz Stronę",

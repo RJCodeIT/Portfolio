@@ -9,17 +9,17 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    key: "sneakerFinder",
-    img: "/sneakerfinder.svg",
+    key: "workido",
+    img: "/workido.png",
     iconLists: ["/react.svg", "/tailwind.svg", "/typescript.svg", "/vite.svg", "/mongodb.svg"],
-    link: "https://rjcode-portfolio.pl/sneakerFinder",
+    link: "https://workido.pl/",
   },
   {
     id: 2,
     key: "myParish",
-    img: "/metalMaster.svg",
+    img: "/my-parish.png",
     iconLists: ["/nextjs.svg", "/typescript.svg", "/tailwind.svg", "/vercel.svg", "/microsoftSqlServer.svg"], 
-    link: "https://rjcode-portfolio.pl/metalMaster",
+    link: "https://rjcode-portfolio.pl/mojaParafia",
   },
   {
     id: 3,

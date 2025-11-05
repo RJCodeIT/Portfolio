@@ -52,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="w-full relative group cursor-pointer min-h-[600px] sm:min-h-[580px] md:min-h-[660px]"
+      className="w-full relative group cursor-pointer min-h-[680px] sm:min-h-[660px] md:min-h-[740px]"
       style={{
         transformStyle: 'preserve-3d',
         transition: 'transform 0.1s ease-out',
@@ -138,12 +138,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {t(`projects.${project.key}.title`)}
           </h1>
 
-          <p className="lg:text-lg md:text-base text-sm text-gray-300 leading-relaxed mb-4 md:mb-6 line-clamp-2 md:h-[48px] overflow-hidden">
+          <p className="lg:text-lg md:text-base text-sm text-gray-300 leading-relaxed mb-2 md:mb-3">
             {t(`projects.${project.key}.description`)}
           </p>
 
           {/* Tech stack with enhanced icons */}
-          <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-3 md:gap-6 mt-auto">
+          <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 md:gap-3 mt-auto">
             <div className="flex flex-wrap items-center gap-1 md:gap-2 mb-3 sm:mb-0">
               {project.iconLists.map((icon, index) => (
                 <div
