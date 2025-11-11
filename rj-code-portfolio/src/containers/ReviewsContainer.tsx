@@ -138,7 +138,7 @@ export default function ReviewsContainer() {
         <meta itemProp="keywords" content="opinie klientów, referencje, strony internetowe, aplikacje webowe, React, Next.js" />
       </div>
 
-      <div className="flex items-center justify-center w-full">
+      <div className="flex items-center justify-center w-full relative z-30">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[90vw]">
           {reviews.map((review, index) => {
             const distanceX = !isMobile

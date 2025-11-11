@@ -133,7 +133,7 @@ export default function HowWeWorkContainer() {
       </div>
 
       <motion.div
-        className="container mx-auto px-8 relative"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -153,7 +153,7 @@ export default function HowWeWorkContainer() {
         </motion.p>
         <meta itemProp="keywords" content="metodologia projektów IT, proces tworzenia aplikacji, rozwój oprogramowania, React, Next.js, React Native" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {howWeWorkItems.map((item: HowWeWorkStep, index: number) => (
             <motion.div 
               key={index} 
