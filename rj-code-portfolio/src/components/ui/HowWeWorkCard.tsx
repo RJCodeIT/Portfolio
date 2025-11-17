@@ -27,7 +27,7 @@ function HowWeWorkCardComponent({
 
   return (
     <div
-      className="flex flex-col items-start w-full h-[480px] sm:h-[500px] lg:h-[520px] bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-lg hover:shadow-card-3d transition-all duration-500 animate-fadeIn relative group border border-white/20 hover:border-primary/40"
+      className="flex flex-col items-start w-full min-h-[300px] sm:min-h-[420px] lg:min-h-[480px] bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-lg hover:shadow-card-3d transition-all duration-500 animate-fadeIn relative group border border-white/20 hover:border-primary/40"
       itemProp={itemProp}
       itemScope={itemScope}
       itemType={itemType}

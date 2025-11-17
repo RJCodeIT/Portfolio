@@ -14,9 +14,9 @@
       "title": "Pawnshop",
       "description": "An advanced system designed to support pawnshop operations - including management of pledges, sales, customer records, and reporting. The project emphasizes data security and a clean user interface, ensuring efficient control over daily financial and inventory processes."
     },
-    "alpacarnia": {
-      "title": "Alpacarnia",
-      "description": "A modern website created for a company specializing in alpaca breeding and organizing educational and recreational visits. The project combines clean aesthetics with practical functionality, presenting the company’s offer, photo galleries, and contact options - reflecting the brand’s friendly and natural spirit."
+    "usedcars": {
+      "title": "Used Cars",
+      "description": "An advanced system for selling and buying cars, allowing users to add listings, browse offers, and use an intelligent vehicle-search module based on individual preferences. The project focuses on a clear interface, user-friendly experience, and precise matching of cars to buyers’ needs."
     }
   },
   "checkLiveSite": "Check Live Site",

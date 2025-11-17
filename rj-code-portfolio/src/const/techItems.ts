@@ -13,7 +13,7 @@ export const technologies: TechItem[] = [
   { 
     key: 'reactNative',
     icon: '/react-native.svg',
-    className: 'text-[#61DAFB]'
+    className: 'text-white'
   },
   { 
     key: 'nextjs',
@@ -38,7 +38,7 @@ export const technologies: TechItem[] = [
   { 
     key: 'express',
     icon: '/express.svg',
-    className: 'text-black'
+    className: 'text-white'
   },
   { 
     key: 'mongodb',

@@ -14,9 +14,9 @@
       "title": "Pawnshop",
       "description": "Zaawansowany system wspierający działalność lombardów - umożliwia obsługę zastawów, sprzedaży, ewidencji klientów oraz generowanie raportów. Projekt skupia się na bezpieczeństwie danych i przejrzystości interfejsu, co pozwala na efektywne zarządzanie codziennymi operacjami finansowymi i magazynowymi."
     },
-    "alpacarnia": {
-      "title": "Alpacarnia",
-      "description": "Nowoczesna strona internetowa stworzona dla firmy zajmującej się hodowlą alpak oraz organizacją spotkań edukacyjnych i rekreacyjnych. Projekt łączy estetykę z funkcjonalnością - prezentuje ofertę, galerie zdjęć i możliwość kontaktu, podkreślając wyjątkowy, przyjazny charakter marki."
+    "usedcars": {
+      "title": "Used Cars",
+      "description": "Zaawansowany system do sprzedaży i zakupu samochodów, umożliwiający dodawanie ogłoszeń, przeglądanie ofert oraz korzystanie z inteligentnego modułu wyszukiwania pojazdów na podstawie preferencji użytkownika. Projekt skupia się na przejrzystym interfejsie, wygodnej obsłudze oraz dokładnym dopasowywaniu aut do potrzeb kupujących."
     }
   },
   "checkLiveSite": "Zobacz Stronę",

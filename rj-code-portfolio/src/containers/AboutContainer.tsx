@@ -53,7 +53,7 @@ function AboutContainerComponent() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-6xl md:text-7xl font-bold mb-8 text-white bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto] break-words">
             {t("whoWeAre")}
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">

@@ -30,9 +30,9 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    key: "alpacarnia",
-    img: "/alpacarnia.webp",
+    key: "usedcars",
+    img: "/used-cars.webp",
     iconLists: ["/react.svg", "/tailwind.svg", "/typescript.svg", "/vite.svg", "/mongodb.svg"],
-    link: "https://rjcode-portfolio.pl/alpacarnia",
+    link: "https://rjcode-portfolio.pl/usedcars",
   },
 ];
