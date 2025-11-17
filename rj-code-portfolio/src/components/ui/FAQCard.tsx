@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQCardProps {
@@ -12,7 +12,30 @@ interface FAQCardProps {
   itemType?: string;
 }
 
-export default function FAQCard({
+// --- Motion variants moved outside to avoid recreation on each render ---
+const arrowVariants = {
+  closed: { rotate: 0 },
+  open: { rotate: 180 }
+};
+
+const answerWrapperVariants = {
+  initial: { height: 0, opacity: 0 },
+  animate: { height: "auto", opacity: 1 },
+  exit: { height: 0, opacity: 0 }
+};
+
+const textSlideVariants = {
+  initial: { x: -20 },
+  animate: { x: 0 }
+};
+
+const dividerVariants = {
+  initial: { scaleX: 0 },
+  animate: { scaleX: 1 },
+  exit: { scaleX: 0 }
+};
+
+function FAQCardComponent({
   question,
   answer,
   preserveWhitespace = false,
@@ -21,48 +44,42 @@ export default function FAQCard({
   itemType
 }: FAQCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = useCallback(() => setIsOpen(o => !o), []);
 
   return (
-    <div 
-      className={`w-full backdrop-blur-md border rounded-xl shadow-lg hover:shadow-card-hover transition-all duration-300 relative overflow-hidden group
-      ${isOpen ? 'bg-white/10 border-primary/30' : 'bg-white/5 border-white/10 hover:border-primary/20'}`}
+    <div
+      className={`w-full backdrop-blur-md border rounded-xl shadow-lg hover:shadow-card-hover 
+      transition-all duration-300 relative overflow-hidden group
+      ${isOpen ? "bg-white/10 border-primary/30" : "bg-white/5 border-white/10 hover:border-primary/20"}`}
       itemProp={itemProp}
       itemScope={itemScope}
       itemType={itemType}
     >
-      {/* Gradient background effect */}
+      {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Shimmer effect */}
+
+      {/* Shimmer */}
       <motion.div
         className="absolute inset-0 bg-shimmer opacity-0 group-hover:opacity-50"
-        animate={{
-          x: ['-100%', '100%'],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatDelay: 3,
-        }}
+        animate={{ x: ["-100%", "100%"] }}
+        transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
       />
 
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         className="w-full p-8 text-left flex justify-between items-center gap-8 group relative z-10"
       >
-        <motion.h3 
+        <motion.h3
           className="text-lg font-semibold text-white group-hover:translate-x-1 transition-transform duration-300"
           itemProp="name"
         >
           {question}
         </motion.h3>
+
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ 
-            type: "spring",
-            stiffness: 300,
-            damping: 20
-          }}
+          variants={arrowVariants}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="w-6 h-6 text-white/70 flex-shrink-0 group-hover:text-white transition-colors duration-300"
         >
           <svg
@@ -77,28 +94,24 @@ export default function FAQCard({
           </svg>
         </motion.div>
       </button>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ 
-              height: "auto", 
-              opacity: 1,
-            }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ 
-              height: {
-                type: "spring",
-                stiffness: 500,
-                damping: 40,
-              },
+            variants={answerWrapperVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              height: { type: "spring", stiffness: 500, damping: 40 },
               opacity: { duration: 0.2 }
             }}
             className="overflow-hidden relative z-10"
           >
             <motion.div
-              initial={{ x: -20 }}
-              animate={{ x: 0 }}
+              variants={textSlideVariants}
+              initial="initial"
+              animate="animate"
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <p
@@ -112,12 +125,14 @@ export default function FAQCard({
                 <span itemProp="text">{answer}</span>
               </p>
             </motion.div>
+
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              exit={{ scaleX: 0 }}
-              transition={{ duration: 0.3 }}
               className="absolute left-8 right-8 top-0 h-px bg-white/10"
+              variants={dividerVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
             />
           </motion.div>
         )}
@@ -125,3 +140,5 @@ export default function FAQCard({
     </div>
   );
 }
+
+export default memo(FAQCardComponent);

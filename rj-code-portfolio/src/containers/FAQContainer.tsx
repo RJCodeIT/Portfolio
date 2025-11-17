@@ -1,56 +1,67 @@
 "use client";
 
+import React, { useMemo, useCallback } from "react";
 import FAQCard from "../components/ui/FAQCard";
 import Button from "../components/ui/Button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useFaqData } from "../const/faq";
 
-export default function FAQContainer() {
+function FAQContainer() {
   const { t } = useTranslation("faq");
   const faqData = useFaqData();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+  /** -----------------------------------
+   *  Variants — useMemo for stability
+   * -----------------------------------*/
+  const containerVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.1,
+          delayChildren: 0.3,
+        },
       },
-    },
-  };
+    }),
+    []
+  );
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
+  const itemVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          ease: "easeOut",
+        },
       },
-    },
-  };
+    }),
+    []
+  );
 
-  const scrollToContact = () => {
+  /** -----------------------------------
+   *  Callbacks — no new function each render
+   * -----------------------------------*/
+  const scrollToContact = useCallback(() => {
     const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
   return (
-    <section 
-      id="faq" 
+    <section
+      id="faq"
       className="relative w-full py-32 overflow-hidden"
       aria-label="Często zadawane pytania o nasze usługi IT"
       itemScope
       itemType="https://schema.org/FAQPage"
     >
-      {/* Enhanced Background */}
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
@@ -64,7 +75,8 @@ export default function FAQContainer() {
             ease: "easeInOut",
           }}
         />
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
@@ -78,11 +90,12 @@ export default function FAQContainer() {
             ease: "easeInOut",
           }}
         />
-        {/* Decorative elements */}
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(138,43,226,0.05),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(75,0,130,0.05),transparent_50%)]" />
       </div>
 
+      {/* Content */}
       <motion.div
         className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative"
         variants={containerVariants}
@@ -90,22 +103,29 @@ export default function FAQContainer() {
         whileInView="visible"
         viewport={{ once: true }}
       >
+        {/* Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 
+          <h2
             className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto]"
             itemProp="headline"
           >
             {t("title")}
           </h2>
-          <p 
+
+          <p
             className="text-white max-w-2xl mx-auto text-xl md:text-2xl leading-relaxed"
             itemProp="description"
           >
             {t("description")}
           </p>
-          <meta itemProp="keywords" content="FAQ IT, pytania o strony internetowe, rozwiązania webowe, aplikacje mobilne, wsparcie techniczne" />
+
+          <meta
+            itemProp="keywords"
+            content="FAQ IT, pytania o strony internetowe, rozwiązania webowe, aplikacje mobilne, wsparcie techniczne"
+          />
         </motion.div>
 
+        {/* FAQ Cards */}
         <div className="space-y-6">
           {faqData.map((faq, index) => (
             <motion.div
@@ -114,7 +134,6 @@ export default function FAQContainer() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={index}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -130,9 +149,10 @@ export default function FAQContainer() {
           ))}
         </div>
 
+        {/* CTA */}
         <motion.div className="text-center mt-12" variants={itemVariants}>
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             onClick={scrollToContact}
             className="shadow-glow-primary hover:shadow-card-hover transition-all duration-300"
           >
@@ -143,3 +163,5 @@ export default function FAQContainer() {
     </section>
   );
 }
+
+export default FAQContainer;

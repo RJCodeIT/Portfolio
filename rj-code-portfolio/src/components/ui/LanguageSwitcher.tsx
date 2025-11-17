@@ -1,27 +1,26 @@
 "use client";
+
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useEffect, useCallback, memo } from "react";
 import { motion } from "framer-motion";
 
-const LanguageSwitcher = () => {
+function LanguageSwitcherComponent() {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState("en");
 
+  // Load language once on mount
   useEffect(() => {
     const storedLang = localStorage.getItem("language");
-    if (storedLang) {
-      setLanguage(storedLang);
+    if (storedLang && storedLang !== i18n.language) {
       i18n.changeLanguage(storedLang);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [i18n]);
 
-  const toggleLanguage = () => {
-    const newLang = language === "pl" ? "en" : "pl";
+  // Toggle language
+  const toggleLanguage = useCallback(() => {
+    const newLang = i18n.language === "pl" ? "en" : "pl";
     localStorage.setItem("language", newLang);
-    setLanguage(newLang);
     i18n.changeLanguage(newLang);
-  };
+  }, [i18n.language, i18n]);
 
   return (
     <motion.div
@@ -31,9 +30,9 @@ const LanguageSwitcher = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {language === "pl" ? "EN" : "PL"}
+      {i18n.language === "pl" ? "EN" : "PL"}
     </motion.div>
   );
-};
+}
 
-export default LanguageSwitcher;
+export default memo(LanguageSwitcherComponent);

@@ -136,3 +136,19 @@ body::after {
     font-optical-sizing: auto;
   }
 }
+
+/* global.css */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-animation {
+  animation: shimmer 2s infinite;
+  animation-play-state: paused;
+}
+
+.group:hover .shimmer-animation {
+  animation-play-state: running;
+}
+

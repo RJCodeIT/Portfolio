@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
+import React, { memo, useMemo } from "react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface CheckboxProps {
   label: string;
@@ -17,7 +17,7 @@ interface CheckboxProps {
   linkHref?: string;
 }
 
-export default function Checkbox({
+function CheckboxComponent({
   label,
   required = false,
   checked = false,
@@ -27,18 +27,48 @@ export default function Checkbox({
   error,
   showError = false,
   linkText,
-  linkHref
+  linkHref,
 }: CheckboxProps) {
+  
+  // Memoized input classes
+  const inputClass = useMemo(
+    () =>
+      cn(
+        "w-4 h-4 text-primary bg-white/10 border border-gray-700 rounded focus:ring-primary",
+        className
+      ),
+    [className]
+  );
+
+  // Memoized label + optional link
+  const labelContent = useMemo(() => {
+    return (
+      <>
+        {label}
+        {required && <span className="text-red-500 ml-1">*</span>}
+        {linkText && linkHref && (
+          <>
+            {" "}
+            <Link
+              href={linkHref}
+              className="text-primary hover:text-primary/80 underline transition-colors"
+              target="_blank"
+            >
+              {linkText}
+            </Link>
+          </>
+        )}
+      </>
+    );
+  }, [label, required, linkText, linkHref]);
+
   return (
     <div className="flex flex-col gap-1 w-full">
       <div className="flex items-start">
         <div className="flex items-center h-5">
           <input
             type="checkbox"
-            className={cn(
-              'w-4 h-4 text-primary bg-white/10 border border-gray-700 rounded focus:ring-primary',
-              className
-            )}
+            className={inputClass}
             required={required}
             checked={checked}
             name={name}
@@ -46,29 +76,20 @@ export default function Checkbox({
             id={name}
           />
         </div>
-        <label 
-          htmlFor={name} 
+
+        <label
+          htmlFor={name}
           className="ml-2 text-sm font-medium text-gray-300 cursor-pointer"
         >
-          {label}
-          {required && <span className="text-red-500 ml-1">*</span>}
-          {linkText && linkHref && (
-            <>
-              {' '}
-              <Link 
-                href={linkHref} 
-                className="text-primary hover:text-primary/80 underline transition-colors"
-                target="_blank"
-              >
-                {linkText}
-              </Link>
-            </>
-          )}
+          {labelContent}
         </label>
       </div>
+
       {showError && error && (
         <p className="text-red-500 text-xs mt-1">{error}</p>
       )}
     </div>
   );
 }
+
+export default memo(CheckboxComponent);

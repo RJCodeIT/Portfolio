@@ -1,19 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const navVariants = {
   hidden: { y: -100, opacity: 0 },
-  visible: { 
-    y: 0, 
+  visible: {
+    y: 0,
     opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  }
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 const mobileMenuVariants = {
@@ -25,8 +22,8 @@ const mobileMenuVariants = {
       ease: "easeInOut",
       when: "afterChildren",
       staggerChildren: 0.05,
-      staggerDirection: -1
-    }
+      staggerDirection: -1,
+    },
   },
   open: {
     opacity: 1,
@@ -36,9 +33,9 @@ const mobileMenuVariants = {
       ease: "easeInOut",
       when: "beforeChildren",
       staggerChildren: 0.05,
-      staggerDirection: 1
-    }
-  }
+      staggerDirection: 1,
+    },
+  },
 };
 
 const linkVariants = {
@@ -49,118 +46,118 @@ const linkVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: "easeOut"
-    }
+      ease: "easeOut",
+    },
   }),
-  hover: { 
+  hover: {
     scale: 1.05,
     y: -2,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
 };
 
-const Navbar = () => {
+function Navbar() {
   const { t } = useTranslation("navbar");
+
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const navbarHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+  const navLinks = useMemo(
+    () => [
+      { href: "#about", text: t("about") },
+      { href: "#projects", text: t("projects") },
+      { href: "#services", text: t("services") },
+      { href: "#reviews", text: t("reviews") },
+      { href: "#howWeWork", text: t("howWeWork") },
+      { href: "#contact", text: t("contact") },
+      { href: "#faq", text: t("faq") },
+    ],
+    [t]
+  );
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+  const handleScroll = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const element = document.getElementById(targetId);
 
-      if (targetId) {
-        window.history.pushState({}, '', `#${targetId}`);
+      if (element) {
+        const navbarHeight = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - navbarHeight;
+
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+
+        window.history.pushState({}, "", `#${targetId}`);
       }
-    }
-  };
+    },
+    []
+  );
 
   useEffect(() => {
-    const controlNavbar = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
+    let lastScrollY = window.scrollY;
 
-    const handleSectionVisibility = () => {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currY = window.scrollY;
 
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.id;
+          // Hide/show navbar
+          if (currY > lastScrollY) setShow(false);
+          else setShow(true);
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          if (activeSection !== sectionId) {
-            setActiveSection(sectionId);
-            if (sectionId) {
-              window.history.replaceState({}, '', `#${sectionId}`);
-            } else {
-              window.history.replaceState({}, '', window.location.pathname);
+          lastScrollY = currY;
+
+          // Active section detection
+          const sections = document.querySelectorAll("section[id]");
+          const scrollPoint = window.scrollY + window.innerHeight / 3;
+
+          let newActive = "";
+          sections.forEach((s) => {
+            const el = s as HTMLElement;
+            const top = el.offsetTop;
+            const height = el.clientHeight;
+            if (scrollPoint >= top && scrollPoint < top + height) {
+              newActive = el.id;
             }
+          });
+
+          if (newActive !== activeSection) {
+            setActiveSection(newActive);
+            window.history.replaceState(
+              {},
+              "",
+              newActive ? `#${newActive}` : window.location.pathname
+            );
           }
-        }
-      });
 
-      if (window.scrollY === 0) {
-        setActiveSection('');
-        window.history.replaceState({}, '', window.location.pathname);
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
-    const checkMobile = () => {
+    const onResize = () => {
       setIsMobile(window.innerWidth < 726);
-      if (window.innerWidth >= 726) {
-        setIsMobileMenuOpen(false);
-      }
+      if (window.innerWidth >= 726) setIsMobileMenuOpen(false);
     };
 
-    window.addEventListener('scroll', controlNavbar);
-    window.addEventListener('scroll', handleSectionVisibility);
-    window.addEventListener('resize', checkMobile);
-    checkMobile();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
 
-    handleSectionVisibility();
+    onResize();
+    onScroll();
 
     return () => {
-      window.removeEventListener('scroll', controlNavbar);
-      window.removeEventListener('scroll', handleSectionVisibility);
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
-  }, [lastScrollY, activeSection]);
-
-  const navLinks = [
-    { href: "#about", text: t("about") },
-    { href: "#projects", text: t("projects") },
-    { href: "#services", text: t("services") },
-    { href: "#reviews", text: t("reviews") },
-    { href: "#howWeWork", text: t("howWeWork") },
-    { href: "#contact", text: t("contact") },
-    { href: "#faq", text: t("faq") }
-  ];
+  }, [activeSection]);
 
   return (
     <AnimatePresence>
@@ -174,7 +171,7 @@ const Navbar = () => {
             className="mx-auto my-4 w-fit px-8 py-4 bg-black/20 backdrop-blur-md rounded-full border border-white/5 shadow-lg"
           >
             {!isMobile ? (
-              <motion.div 
+              <motion.div
                 className="flex gap-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -191,13 +188,15 @@ const Navbar = () => {
                     animate="animate"
                     whileHover="hover"
                     className={`relative text-sm font-medium tracking-wide transition-colors duration-300
-                      ${activeSection === link.href.replace('#', '') 
-                        ? 'text-white' 
-                        : 'text-gray-400 hover:text-white'
+                      ${
+                        activeSection === link.href.replace("#", "")
+                          ? "text-white"
+                          : "text-gray-400 hover:text-white"
                       }
-                      ${activeSection === link.href.replace('#', '') 
-                        ? 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-100 after:transition-transform after:duration-300' 
-                        : 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100'
+                      ${
+                        activeSection === link.href.replace("#", "")
+                          ? 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:scale-x-100 after:transition-transform after:duration-300'
+                          : 'after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100'
                       }
                     `}
                   >
@@ -208,29 +207,26 @@ const Navbar = () => {
             ) : (
               <motion.button
                 className="relative w-8 h-8 flex flex-col justify-center items-center"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                animate={isMobileMenuOpen ? "open" : "closed"}
+                onClick={() => setIsMobileMenuOpen((p) => !p)}
               >
                 <motion.span
                   className="w-6 h-0.5 bg-white absolute"
                   animate={{
                     rotate: isMobileMenuOpen ? 45 : 0,
-                    y: isMobileMenuOpen ? 0 : -8
+                    y: isMobileMenuOpen ? 0 : -8,
                   }}
                   transition={{ duration: 0.3 }}
                 />
                 <motion.span
                   className="w-6 h-0.5 bg-white absolute"
-                  animate={{
-                    opacity: isMobileMenuOpen ? 0 : 1
-                  }}
+                  animate={{ opacity: isMobileMenuOpen ? 0 : 1 }}
                   transition={{ duration: 0.3 }}
                 />
                 <motion.span
                   className="w-6 h-0.5 bg-white absolute"
                   animate={{
                     rotate: isMobileMenuOpen ? -45 : 0,
-                    y: isMobileMenuOpen ? 0 : 8
+                    y: isMobileMenuOpen ? 0 : 8,
                   }}
                   transition={{ duration: 0.3 }}
                 />
@@ -257,14 +253,16 @@ const Navbar = () => {
                     }}
                     custom={i}
                     variants={linkVariants}
-                    className={`relative inline-block py-3 text-base font-medium tracking-wide transition-colors duration-300 text-center
-                      ${activeSection === link.href.replace('#', '') 
-                        ? 'text-white' 
-                        : 'text-gray-400 hover:text-white'
+                    className={`relative inline-block py-3 text-base font-medium tracking-wide text-center transition-colors duration-300
+                      ${
+                        activeSection === link.href.replace("#", "")
+                          ? "text-white"
+                          : "text-gray-400 hover:text-white"
                       }
-                      ${activeSection === link.href.replace('#', '') 
-                        ? 'after:content-[""] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-100 after:transition-transform after:duration-300' 
-                        : 'after:content-[""] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100'
+                      ${
+                        activeSection === link.href.replace("#", "")
+                          ? 'after:content-[""] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:scale-x-100'
+                          : 'after:content-[""] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full after:scale-x-0 hover:after:scale-x-100'
                       }
                     `}
                   >
@@ -278,6 +276,6 @@ const Navbar = () => {
       )}
     </AnimatePresence>
   );
-};
+}
 
 export default Navbar;

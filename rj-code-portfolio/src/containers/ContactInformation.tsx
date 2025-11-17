@@ -1,28 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-const envelopeIcon = "/envelope.svg";
-const githubIcon = "/github.svg";
-const linkedinIcon = "/linkedin.svg";
-const phoneIcon = "/phone.svg";
+const ICONS = {
+  email: "/envelope.svg",
+  phone: "/phone.svg",
+  linkedin: "/linkedin.svg",
+  github: "/github.svg",
+} as const;
 
-export default function ContactInformation() {
+const CONTACT_ITEMS = [
+  { key: "email", link: "mailto:rjcodeit@gmail.com" },
+  { key: "phone", link: "" },
+  { key: "linkedin", link: "https://www.linkedin.com/company/rj-code" },
+  { key: "github", link: "https://github.com/RJCodeIT" },
+] as const;
+
+function ContactInformationComponent() {
   const { t } = useTranslation("contact");
-  const contactItemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
+
+  // Stable animation variants
+  const contactItemVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, x: -20 },
+      visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
       },
-    },
-  };
+    }),
+    []
+  );
 
   return (
     <motion.div
@@ -35,44 +46,32 @@ export default function ContactInformation() {
       >
         {t("contactInfo.title")}
       </motion.h3>
+
       <div className="space-y-10 flex-grow">
         <div className="space-y-8">
-          {[
-            { key: "email", link: "mailto:rjcodeit@gmail.com" },
-            { key: "phone", link: "" },
-            {
-              key: "linkedin",
-              link: "https://www.linkedin.com/company/rj-code",
-            },
-            { key: "github", link: "https://github.com/RJCodeIT" },
-          ].map(({ key, link }, index) => (
+          {CONTACT_ITEMS.map(({ key, link }) => (
             <motion.div
-              key={index}
+              key={key}
               className="flex items-center space-x-6 group"
               variants={contactItemVariants}
               whileHover={{ x: 8 }}
             >
+              {/* ICON */}
               <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm border border-white/10">
                 <Image
-                  src={
-                    key === "email"
-                      ? envelopeIcon
-                      : key === "phone"
-                      ? phoneIcon
-                      : key === "linkedin"
-                      ? linkedinIcon
-                      : githubIcon
-                  }
+                  src={ICONS[key]}
                   alt={`${t(`contactInfo.${key}.label`)} Icon`}
                   width={32}
                   height={32}
                   className="brightness-0 invert"
                 />
               </div>
+
               <div>
                 <p className="text-sm text-gray-400 mb-1">
                   {t(`contactInfo.${key}.label`)}
                 </p>
+
                 {link ? (
                   <a
                     href={link}
@@ -89,6 +88,8 @@ export default function ContactInformation() {
             </motion.div>
           ))}
         </div>
+
+        {/* NOTE */}
         <motion.div
           className="pt-8 border-t border-white/10"
           variants={contactItemVariants}
@@ -99,3 +100,5 @@ export default function ContactInformation() {
     </motion.div>
   );
 }
+
+export default memo(ContactInformationComponent);

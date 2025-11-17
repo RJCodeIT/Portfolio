@@ -1,32 +1,41 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+import { memo, useCallback, useMemo, useRef } from "react";
 import { useServices } from "../const/services";
 import ServiceCard from "../components/ui/ServiceCard";
 import Button from "../components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
-export default function ServicesContainer() {
+function ServicesContainerComponent() {
   const { t } = useTranslation("services");
-  const services = useServices();
+  const rawServices = useServices();
+
+  // Prevent array regeneration
+  const services = useMemo(() => rawServices, [rawServices]);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const scrollToContact = () => {
+  const scrollToContact = useCallback(() => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
   return (
-    <section id="services" className="relative min-h-screen py-24 overflow-hidden" ref={ref} aria-label="Profesjonalne usługi IT dla firm">
+    <section
+      id="services"
+      className="relative min-h-screen py-24 overflow-hidden"
+      ref={ref}
+      aria-label="Profesjonalne usługi IT dla firm"
+    >
       {/* Enhanced Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
@@ -39,7 +48,7 @@ export default function ServicesContainer() {
             ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-1/4 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
@@ -52,30 +61,39 @@ export default function ServicesContainer() {
             ease: "easeInOut",
           }}
         />
-        {/* Grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(138,43,226,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(138,43,226,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
 
       <div className="container mx-auto px-4 relative">
-        <motion.div 
+        <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto]" itemProp="headline">
+          <h2
+            className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto]"
+            itemProp="headline"
+          >
             {t("title")}
           </h2>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed" itemProp="description">
+          <p
+            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
+            itemProp="description"
+          >
             {t("subtitle")}
           </p>
-          <meta itemProp="keywords" content="strony internetowe, aplikacje webowe, aplikacje mobilne, PWA, React Native, Next.js, integracje API" />
+
+          <meta
+            itemProp="keywords"
+            content="strony internetowe, aplikacje webowe, aplikacje mobilne, PWA, React Native, Next.js, integracje API"
+          />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
           {services.map((service, index) => (
             <motion.div
-              key={index}
+              key={service.title}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
@@ -102,7 +120,7 @@ export default function ServicesContainer() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -126,3 +144,5 @@ export default function ServicesContainer() {
     </section>
   );
 }
+
+export default memo(ServicesContainerComponent);
