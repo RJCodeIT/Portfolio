@@ -6,17 +6,21 @@
       "title": "Workido",
       "description": "Workido is an innovative platform designed for freelancers and clients. It allows users to quickly post jobs, find contractors, and manage projects in one place. With an intuitive interface, notification system, and a well-organized category structure, Workido makes collaboration fast, efficient, and seamless."
     },
+    "budgenix": {
+      "title": "Budgenix",
+      "description": "A personal budget management app designed for people who want full control over their finances. It allows quick entry of income and expenses, subscription management, savings goals, and clear data analysis through intuitive summaries. A built-in AI assistant helps plan expenses more effectively and make better financial decisions. The app’s interface is user-friendly and convenient for everyday use."
+    },
     "myParish": {
       "title": "My Parish",
       "description": "A comprehensive parish management system built for Catholic parishes. It enables administrators and clergy to easily publish Mass intentions, announcements, news, and events. The project also includes modules for managing parish groups and member data. The design focuses on simplicity, accessibility, and an aesthetic consistent with the community’s character."
     },
-    "pawnshop": {
-      "title": "Pawnshop",
-      "description": "An advanced system designed to support pawnshop operations - including management of pledges, sales, customer records, and reporting. The project emphasizes data security and a clean user interface, ensuring efficient control over daily financial and inventory processes."
-    },
     "usedcars": {
       "title": "Used Cars",
       "description": "An advanced system for selling and buying cars, allowing users to add listings, browse offers, and use an intelligent vehicle-search module based on individual preferences. The project focuses on a clear interface, user-friendly experience, and precise matching of cars to buyers’ needs."
+    },
+    "pawnshop": {
+      "title": "Pawnshop",
+      "description": "An advanced system designed to support pawnshop operations - including management of pledges, sales, customer records, and reporting. The project emphasizes data security and a clean user interface, ensuring efficient control over daily financial and inventory processes."
     }
   },
   "checkLiveSite": "Check Live Site",

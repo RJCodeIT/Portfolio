@@ -6,17 +6,21 @@
       "title": "Workido",
       "description": "Workido to innowacyjna platforma stworzona z myślą o freelancerach i zleceniodawcach. Umożliwia szybkie dodawanie ogłoszeń, wyszukiwanie wykonawców oraz zarządzanie zleceniami w jednym miejscu. Intuicyjny interfejs, system powiadomień oraz przejrzysty układ kategorii sprawiają, że współpraca między użytkownikami jest szybka i wygodna."
     },
+    "budgenix": {
+      "title": "Budgenix",
+      "description": "Aplikacja do zarządzania budżetem osobistym, stworzona dla osób, które chcą mieć kontrolę nad swoimi finansami. Umożliwia szybkie dodawanie przychodów i wydatków, zarządzanie subskrypcjami, cele oszczędnościowe oraz analizę danych w przejrzystych zestawieniach. Wbudowany asystent AI pomaga lepiej planować wydatki i podejmować trafniejsze decyzje finansowe. Interfejs aplikacji jest intuicyjny i wygodny w codziennym użytkowaniu."
+    },
     "myParish": {
       "title": "Moja Parafia",
       "description": "Kompleksowy system zarządzania parafią katolicką, pozwalający administratorom i duchownym na łatwe publikowanie intencji mszalnych, ogłoszeń, aktualności i wydarzeń. Projekt obejmuje także moduł do zarządzania grupami parafialnymi oraz danymi parafian. Strona została zaprojektowana z myślą o prostocie obsługi i estetyce zgodnej z charakterem wspólnoty parafialnej."
     },
-    "pawnshop": {
-      "title": "Pawnshop",
-      "description": "Zaawansowany system wspierający działalność lombardów - umożliwia obsługę zastawów, sprzedaży, ewidencji klientów oraz generowanie raportów. Projekt skupia się na bezpieczeństwie danych i przejrzystości interfejsu, co pozwala na efektywne zarządzanie codziennymi operacjami finansowymi i magazynowymi."
-    },
     "usedcars": {
       "title": "Used Cars",
       "description": "Zaawansowany system do sprzedaży i zakupu samochodów, umożliwiający dodawanie ogłoszeń, przeglądanie ofert oraz korzystanie z inteligentnego modułu wyszukiwania pojazdów na podstawie preferencji użytkownika. Projekt skupia się na przejrzystym interfejsie, wygodnej obsłudze oraz dokładnym dopasowywaniu aut do potrzeb kupujących."
+    },
+    "pawnshop": {
+      "title": "Pawnshop",
+      "description": "Zaawansowany system wspierający działalność lombardów - umożliwia obsługę zastawów, sprzedaży, ewidencji klientów oraz generowanie raportów. Projekt skupia się na bezpieczeństwie danych i przejrzystości interfejsu, co pozwala na efektywne zarządzanie codziennymi operacjami finansowymi i magazynowymi."
     }
   },
   "checkLiveSite": "Zobacz Stronę",
